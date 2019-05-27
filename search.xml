@@ -4,5 +4,11 @@
     <title><![CDATA[Hello World]]></title>
     <url>%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to youknow.wang.]]></content>
+      <categories>
+        <category>youknow</category>
+      </categories>
+      <tags>
+        <tag>youknow</tag>
+      </tags>
   </entry>
 </search>
