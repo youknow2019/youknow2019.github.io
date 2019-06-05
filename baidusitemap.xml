@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E8%89%BA%E6%9C%AF/</loc>
+    <lastmod>2019-06-05</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/hello-world/</loc>
     <lastmod>2019-05-27</lastmod>
   </url>
