@@ -1,0 +1,574 @@
+<p>🌍<br><em><a href="README-cs.md">Čeština</a> ∙ <a href="README-de.md">Deutsch</a> ∙ <a href="README-el.md">Ελληνικά</a> ∙ <a href="README.md">English</a> ∙ <a href="README-es.md">Español</a> ∙ <a href="README-fr.md">Français</a> ∙ <a href="README-id.md">Indonesia</a> ∙ <a href="README-it.md">Italiano</a> ∙ <a href="README-ja.md">日本語</a> ∙ <a href="README-ko.md">한국어</a> ∙ <a href="README-pt.md">Português</a> ∙ <a href="README-ro.md">Română</a> ∙ <a href="README-ru.md">Русский</a> ∙ <a href="README-sl.md">Slovenščina</a> ∙ <a href="README-uk.md">Українська</a> ∙ <a href="README-zh.md">简体中文</a> ∙ <a href="README-zh-Hant.md">繁體中文</a></em></p>
+<h1 id="The-Art-of-Command-Line"><a href="#The-Art-of-Command-Line" class="headerlink" title="The Art of Command Line"></a>The Art of Command Line</h1><p><a href="https://airtable.com/shrzMhx00YiIVAWJg"><img src="https://img.shields.io/badge/%3f-Ask%20a%20Question-ff69b4.svg" alt="質問してみよう"></a></p>
+<p><a href="https://gitter.im/jlevy/the-art-of-command-line?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="https://gitter.im/jlevy/the-art-of-command-lineでチャットに参加しよう"></a></p>
+<ul>
+<li><a href="#メタ情報">メタ情報</a></li>
+<li><a href="#基本">基本</a></li>
+<li><a href="#日常的に使うもの">日常的に使うもの</a></li>
+<li><a href="#ファイルとデータの処理">ファイルとデータの処理</a></li>
+<li><a href="#システムのデバッグ">システムのデバッグ</a></li>
+<li><a href="#ワンライナー">ワンライナー</a></li>
+<li><a href="#目立たないが便利なもの">目立たないが便利なもの</a></li>
+<li><a href="#os-x用のもの">OS X用のもの</a></li>
+<li><a href="#windows専用">Windows専用</a></li>
+<li><a href="#さらなるリソース">さらなるリソース</a></li>
+<li><a href="#免責事項">免責事項</a></li>
+</ul>
+<p><img src="cowsay.png" alt="curl -s &#39;https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README.md&#39; | egrep -o &#39;`\w+`&#39; | tr -d &#39;`&#39; | cowsay -W50"></p>
+<p>コマンドラインで流れるように操作ができるということは、軽く見られたり他人から理解されないスキルだとみなされることもあるだろう。しかしそのスキルは、明らかにかすぐ分かるようかは問わず、エンジニアとしてのあなたの柔軟性や生産性を改善してくれるものだ。ここでは、Linuxでコマンドラインを使う上で便利だと思ったメモやTipsの数々を挙げてみる。あるものは基礎的だが、非常に詳しいもの、洗練されたもの、曖昧なものもある。このページはそんなに長いものではないが、ここに書いてあることの全てを使ったり思い出すことができれば、かなり詳しくなれるだろう。</p>
+<p>このドキュメントは<a href="AUTHORS.md">多くの執筆者と翻訳者</a>による成果である。<br>ここに書いてあることの多くは、<a href="http://www.quora.com/What-are-some-lesser-known-but-useful-Unix-commands">元々</a><a href="http://www.quora.com/What-are-some-time-saving-tips-that-every-Linux-user-should-know">Quora</a>に<a href="http://www.quora.com/What-are-the-most-useful-Swiss-army-knife-one-liners-on-Unix">書かれて</a>いたものが多いが、より優れた人たちがすぐに改善案を出すことができるGitHubに置くのがよいのではと思った。<br>コマンドラインについて疑問があるなら<a href="https://airtable.com/shrzMhx00YiIVAWJg"><strong>質問してみよう</strong></a> エラーや改善点を見つけたら<a href="/CONTRIBUTING.md"><strong>貢献してみよう</strong></a>!</p>
+<h2 id="メタ情報"><a href="#メタ情報" class="headerlink" title="メタ情報"></a>メタ情報</h2><p>対象 :</p>
+<ul>
+<li>このガイドは、初心者向けでも経験者向きでもある。幅広く(書いてあることは全て重要)、かつ明確で(多くのケースに対して具体的な例を付ける)、そして簡潔(他の場所で見つけられるような重要でないことや脱線したことは省く)であることをゴールにしている。各項目は、多くの場面において必須であるか、他の方法に比べて劇的に時間を節約してくれるだろう。</li>
+<li><a href="#os-x-only">OS X用のもの</a>を除き、Linux向けの内容となっており、その多くは各種LinuxおよびMacOS(あるいはCygwin)でも使えるだろう。</li>
+<li>インタラクティブなBashを使うことを想定しているが、多くの項目は他のシェルやBashのスクリプトでも使えるだろう。</li>
+<li>(このリポジトリへ)組み込むメリットがあるのであれば、標準Unixコマンドやパッケージインストールコマンドも含める。</li>
+</ul>
+<p>注意 :</p>
+<ul>
+<li>1ページ内に収めるために、内容には暗黙的に書かれていることがある。ここで取りかかりを知ったりコマンドが分かれば、詳細をどこかで調べたりするくらいはできるだろう。新しいプログラムをインストールするには、<code>apt-get</code>、<code>yum</code>、<code>dnf</code>、<code>pacman</code>、<code>pip</code>、<code>brew</code>(どれか適したもの)を使おう。</li>
+<li>コマンドやオプション、パイプを分解して理解する手助けに、<a href="http://explainshell.com/">Explainshell</a>を使おう。</li>
+</ul>
+<h2 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h2><ul>
+<li><p>基本的なBashを学ぼう。実際のところ、<code>man bash</code>は結構簡単に理解できるしそんなに長くないので、これで一通りのことは分かる。それ以外のシェルもよいが、Bashは強力だし、常に使用可能であるという利点もある(自分のPCに入れてしまったと言ってzshやfishなど<em>だけ</em>を学んでしまうと、既存のサーバを触らなくてはならない時などに制約が出てしまう)。</p>
+</li>
+<li><p>テキストエディタのどれか最低1つに習熟しよう。<code>nano</code>エディタは編集の基本操作(開く、修正する、保存する、検索する)を学ぶ最もシンプルな方法のひとつだ。ターミナル内で適当にものを書くにあたって他に全く代替品がないという点で、理想的にはVim(<code>vi</code>)がよいだろう(通常はEmacsや高機能なIDEや最新のかっこいいエディタをメインに使っていたとしても)。</p>
+</li>
+<li><p><code>man</code>でのドキュメントの読み方を知ろう(知りたがりのために書くと、<code>man man</code>でセクション番号が分かる。例えば1は「一般的な」コマンド、5はファイルやそのお作法、8は管理についてといった具合)。<code>apropos</code>でmanページを探そう。コマンドによっては実行可能ファイルではなくBashのビルトインコマンドであることを理解し、<code>help</code>や<code>help -d</code>でヘルプが見られることを知ろう。</p>
+</li>
+<li><p><code>&gt;</code>や<code>&lt;</code>、<code>|</code>を使ったパイプによる入出力のリダイレクションを学ぼう。<code>&gt;</code>は出力ファイルを上書き、<code>&gt;&gt;</code>は追記となる。stdout(標準出力)とstderr(標準エラー出力)を学ぼう。</p>
+</li>
+<li><p><code>*</code>(または<code>?</code>や<code>[</code>…<code>]</code>)を使ったファイルグロブ展開、クォーテーション、ダブルクォート<code>&quot;</code>とシングルクォート<code>&#39;</code>の違いを学ぼう(詳しくはこの後の変数展開の項を参照)。</p>
+</li>
+<li><p><code>&amp;</code>、<strong>ctrl-z</strong>、<strong>ctrl-c</strong>、<code>jobs</code>、<code>fg</code>、<code>bg</code>、<code>kill</code>など、Bashのジョブ管理について詳しくなろう。</p>
+</li>
+<li><p><code>ssh</code>について知るとともに、<code>ssh-agent</code>や<code>ssh-add</code>を使ったパスワードなしの認証の基本について理解しよう。</p>
+</li>
+<li><p>ファイル管理について。<code>ls</code>や<code>ls -l</code>(特に、<code>ls -l</code>の各列が何を意味するか理解)、<code>less</code>、<code>head</code>、<code>tail</code>、<code>tail -f</code>(または<code>less +F</code>)、<code>ln</code>と<code>ln -s</code>(ハードリンクとソフトリンクの違いとそれぞれの利点の理解)、<code>chown</code>と<code>chmod</code>、<code>du</code>(ディスク使用量まとめを簡単に見るなら<code>du -hs *</code>)。ファイルシステム管理については、<code>df</code>、<code>mount</code>、<code>fdisk</code>、<code>mkfs</code>、<code>lsblk</code>。inodeについては、<code>ls -i</code>(または <code>df -i</code>)。</p>
+</li>
+<li><p>基本的なネットワーク管理について。<code>ip</code>あるいは<code>ifconfig</code>、<code>dig</code>、<code>traceroute</code>、 <code>route</code>。</p>
+</li>
+<li><p><code>git</code>のようなバージョン管理システムを学んで使ってみよう。</p>
+</li>
+<li><p>正規表現について詳しく知ろう。<code>grep</code>や<code>egrep</code>の色々なフラグも合わせて。<code>-i</code>、<code>-o</code>、<code>-v</code>、<code>-A</code>、<code>-B</code>、<code>-C</code>といったオプションは知っておいて損はない。</p>
+</li>
+<li><p><code>apt-get</code>、<code>yum</code>、<code>dnf</code>、<code>pacman</code>(ディストリビューションによって違う)といったコマンドでパッケージを探したりインストールする方法を学ぼう。Pythonベースのコマンドラインツールをインストールするのに、<code>pip</code>も必要だ(後に出てくるいくつかのコマンドは<code>pip</code>でインストールするのが一番簡単)。</p>
+</li>
+</ul>
+<h2 id="日常的に使うもの"><a href="#日常的に使うもの" class="headerlink" title="日常的に使うもの"></a>日常的に使うもの</h2><ul>
+<li><p>Bashでは、引数を補完、または利用可能なコマンドを列挙するのに<strong>タブ</strong>を使い、コマンド履歴から検索するのに<strong>ctrl-r</strong>を使う。(検索キーを入力した後、<strong>ctrl-r</strong>を繰り返し入力することで次から次へと検索結果を送ることができる。<strong>Enter</strong>で見つかったコマンドの実行となり、<strong>Enter</strong>ではなく右カーソルキーを押した場合は見つかったコマンドが入力された状態になる。)</p>
+</li>
+<li><p>Bashでは、最後の単語を削除するのには<strong>ctrl-w</strong>、行頭まで全て削除するには<strong>ctrl-u</strong>を使う。単語ごとに移動するには<strong>alt-b</strong>または<strong>alt-f</strong>、行頭に移動するには<strong>ctrl-a</strong>、行末に移動するには<strong>ctrl-e</strong>、行末まで削除するには<strong>ctrl-k</strong>、画面のクリアは<strong>ctrl-l</strong>である。Bashにおけるデフォルトのキー割り当てを全て見るには<code>man readline</code>を参照。たくさん出てくる。例えば、<strong>alt-.</strong>は前の引数を順番に表示し、<strong>alt-*</strong>はグロブを展開する。</p>
+</li>
+<li><p>vi風のキー割り当てが好きなら、<code>set -o vi</code>を実行しよう。(元に戻したいときは<code>set -o emacs</code>)</p>
+</li>
+<li><p>長いコマンドを編集するときに、エディタを設定した後で(例えば<code>export EDITOR=vim</code>)、<strong>ctrl-x</strong> <strong>ctrl-e</strong>によって編集中のコマンドが複数行の編集のために指定したエディタで開かれる。vi風の場合は、<strong>escape-v</strong>。</p>
+</li>
+<li><p>最近実行したコマンドを確認するなら<code>history</code>。<code>!n</code>と続けることで(nはコマンド横に表示される数字)再度実行できる。<strong>ctrl-r</strong>や<strong>alt-.</strong>で用は足りるだろうが、<code>!$</code>(直前の引数)や<code>!!</code>(直前のコマンド)といった省略形もたくさんある。</p>
+</li>
+<li><p><code>cd</code>でホームディレクトリへの移動。ホームディレクトリに関連するファイルにアクセスする場合はプレフィックス<code>~</code>をつける(例: <code>~/.bashrc</code>)。<code>sh</code>スクリプトの中では<code>$HOME</code>でホームディレクトリを表すことができる。</p>
+</li>
+<li><p>前のワーキングディレクトリに戻るなら<code>cd -</code></p>
+</li>
+<li><p>途中までコマンドを入力したけれど心変わりした時は、<strong>alt-#</strong>を打つと行頭に<code>#</code>が挿入され、コメントとして入力される(<strong>ctrl-a</strong>、<strong>#</strong>、<strong>enter</strong>でも同じ)。これは後でコマンド履歴から検索できる。</p>
+</li>
+<li><p><code>xargs</code>(または<code>parallel</code>)を使おう。非常に強力。行ごとにいくつのアイテムを実行するか(<code>-L</code>)や、並列度(<code>-P</code>)も制御できる。正しく実行されるか定かでないなら、まず<code>xargs echo</code>してみればよい。<code>-I{}</code>も便利。例えば以下の通り。</p>
+<pre><code class="bash">find . -name <span class="string">'*.py'</span> | xargs grep some_function
+cat hosts | xargs -I{} ssh root@{} hostname
+</code></pre>
+</li>
+<li><p><code>pstree -p</code>はプロセスツリーを表示するのに便利。</p>
+</li>
+<li><p><code>pgrep</code>や<code>pkill</code>で、プロセス名で検索したりシグナルを送れる(<code>-f</code>も便利)。</p>
+</li>
+<li><p>プロセスに送れる色々なシグナルを知っておこう。例えば、プロセスをサスペンドするには<code>kill -STOP [pid]</code>を使う。全種類見るなら、<code>man 7 signal</code>。</p>
+</li>
+<li><p>バックグラウンドプロセスをずっと実行し続けたいなら<code>nohup</code>あるいは<code>disown</code>を使おう。</p>
+</li>
+<li><p><code>netstat -lntp</code>や<code>ss -plat</code>で、どんなプロセスがリッスンしているか確認しよう(UDPなら<code>-u</code>を付ける)。</p>
+</li>
+<li><p>開かれているソケットやファイルを見るには<code>lsof</code>も参照。</p>
+</li>
+<li><p><code>uptime</code>や<code>w</code>によってシステムの稼働時間を調べられる。</p>
+</li>
+<li><p><code>alias</code>によってよく利用するコマンドのエイリアス(ショートカット)を作成できる。例えば、<code>alias ll=&#39;ls -latr&#39;</code>では新しいエイリアスである<code>ll</code>が作成される.</p>
+</li>
+<li><p>よく使うエイリアス、シェル設定、機能を<code>~/.bashrc</code>に保存し、<a href="http://superuser.com/a/183980/7106">ログインシェルに反映しよう</a>。これで全てのセッションであなたの設定が利用できる。</p>
+</li>
+<li><p>ログイン時に実行されてほしいコマンド、環境変数を<code>~/.bash_profile</code>に記載する。画面からのログインや<code>cron</code>ジョブで起動されるシェルには別の設定が必要だ。</p>
+</li>
+<li><p>Gitで様々なマシンの設定ファイル(例:<code>.bashrc</code>や<code>.bash_profile</code>)を同期させよう。</p>
+</li>
+<li><p>空白を含む変数やファイル名には注意が必要だ。Bash変数にはクオートをつけよう、こんな風に<code>&quot;$FOO&quot;</code>。<br>ファイル名の区切りとしてヌル文字を指定する場合には<code>-0</code>や<code>-print0</code>オプションを付与しよう。例:  <code>locate -0 pattern | xargs -0 ls -al</code> or <code>find / -print0 -type d | xargs -0 ls -al</code>。空白を含んだファイル名を繰り返し実行するためには、IFS=$’\n’`を使ってIFSを改行のみにしよう。</p>
+</li>
+<li><p>Bashスクリプトでは、<code>set -x</code>でデバッグ出力を出せる(<code>set -v</code>は、実行されるコマンドや変数名やコメントなどをそのまま出力する)。特別な理由がない限り厳格モード(strict mode)を使い、<code>set -e</code>でエラー時(0以外の終了コード時)に強制終了するように。<code>set -u</code>によって未定義の変数の利用を検知、パイプのエラーも厳格に扱うために<code>set -o pipefail</code>も使おう(これはちょっと微妙かも)。より複雑なスクリプトなら、EXITまたはERRシグナルに対して<code>trap</code>も使おう。使う場面としては以下の場合のようにエラーを検知してメッセージを出力するとき:</p>
+</li>
+</ul>
+<pre><code class="bash"><span class="built_in">set</span> -euo pipefail
+<span class="built_in">trap</span> <span class="string">"echo 'error: Script failed: see failed command above'"</span> ERR
+</code></pre>
+<ul>
+<li>Bashスクリプトでは、コマンドのグループを作るのにサブシェル(丸括弧で囲まれた部分)が便利。一時的にワーキングディレクトリを移動するというよくある例。</li>
+</ul>
+<pre><code class="bash"><span class="comment"># カレントディレクトリで何か実行</span>
+(<span class="built_in">cd</span> /some/other/dir &amp;&amp; other-command)
+<span class="comment"># 元のディレクトリで作業続行</span>
+</code></pre>
+<ul>
+<li><p>Bashでは、たくさんの変数展開の種類があることを覚えておこう。変数が存在するかチェックするなら、<code>${name:?error message}</code>。例えば、Bashスクリプトが1つの引数を取る必要があるなら、<code>input_file=${1:?usage: $0 input_file}</code>とだけ書けばよい。算術式の展開は、<code>i=$(( (i + 1) % 5 ))</code>。シーケンスは<code>{1..10}</code>。文字列のトリミングは<code>${var%suffix}</code>と<code>${var#prefix}</code>。例えば<code>var=foo.pdf</code>の時、<code>echo ${var%.pdf}.txt</code>とすると<code>foo.txt</code>が出力に。</p>
+</li>
+<li><p><code>{</code>…<code>}</code>を使った中括弧展開によって、似たようなコマンドを複数回入力しなくて済む。例えば、 <code>mv foo.{txt,pdf} some-dir</code> (両方のファイルを移動させる), <code>cp somefile{,.bak}</code> (<code>cp somefile somefile.bak</code> と展開される)、<code>mkdir -p test-{a,b,c}/subtest-{1,2,3}</code> (すべての可能な組み合わせでディレクトリが作られる).</p>
+</li>
+<li><p>展開の順序は括弧→チルダ、パラメータや変数、計算機号、コマンド置換(左から右)→文字の分割→ファイル名の順だ。(例えば、{1..20}のような範囲は{$a..$b}というようには表現できない。<code>seq</code>や<code>for</code>ループを使ってこんな風に表すことができる。<code>seq $a $b or for((i=a; i&lt;=b; i++)); do ... ; done</code>)</p>
+</li>
+<li><p>コマンドの出力を<code>&lt;(some command)</code>のようにしてファイルのように扱える。例えば、ローカルとリモートのの<code>/etc/hosts</code>を比較するなら以下のようになる。</p>
+</li>
+</ul>
+<pre><code class="sh">diff /etc/hosts &lt;(ssh somehost cat /etc/hosts)
+</code></pre>
+<ul>
+<li><p>スクリプトを書く時は全てのコードを中括弧で囲まなくてはいけない。もし閉じ括弧が欠けていたらシンタックスエラーで実行が妨げられる。これはあなたがスクリプトをダウンロードしたときに判明する。（不完全なスクリプトの）実行によって部分的にwebからダウンロードしてしまうのを防ぐためだ。</p>
+<pre><code class="bash">{
+    <span class="comment"># Your code here</span>
+}
+</code></pre>
+</li>
+<li><p>「ヒアドキュメント」によって、ファイルからの<a href="https://www.tldp.org/LDP/abs/html/here-docs.html">複数行のリダイレクト</a>のように振る舞うことができる。</p>
+<pre><code>cat &lt;&lt;EOF
+input
+on multiple lines
+EOF
+</code></pre></li>
+<li><p>Bashでは、<code>some-command &gt;logfile 2&gt;&amp;1</code>または<code>some-command &amp;&gt;logfile</code>で標準出力と標準エラー出力の両方をリダイレクトできる。コマンドが標準入力に対してファイルハンドルを開きっぱなしにせず、ログインしているターミナルにひもづけておくため、<code>&lt;/dev/null</code>するのもよい習慣。</p>
+</li>
+<li><p>16進と10進のASCIIテーブルを見るのに<code>man ascii</code>を使おう。一般的なエンコードに関する情報は、<code>man unicode</code>や<code>man utf-8</code>、<code>man latin1</code>が便利。</p>
+</li>
+<li><p>スクリーンの分割に<code>screen</code>や<a href="https://tmux.github.io/"><code>tmux</code></a>を使おう。特に、リモートのSSHセッションをデタッチしたりアタッチし直したりするのに有効。<code>byobu</code>はscreenやtmuxの情報をより多く提供してくれ、管理が容易になる。セッション永続化だけの簡単なものなら<code>dtach</code>。</p>
+</li>
+<li><p>SSHで<code>-L</code>あるいは<code>-D</code>(まれに<code>-R</code>)を使ったポートトンネルのやり方を覚えておくと便利。例えばリモートのサーバからウェブサイトにアクセスする時など。</p>
+</li>
+<li><p>SSHの設定を少しでも最適化しておくと便利。例えば以下の<code>~/.ssh/config</code>の設定だと、ネットワーク環境による接続断を回避し、圧縮を使用し(帯域の細い回線を使ったscpなどで便利)、ローカルの制御ファイルを指定して同一サーバとのチャネルを多重化する。</p>
+</li>
+</ul>
+<pre><code>TCPKeepAlive=yes
+ServerAliveInterval=15
+ServerAliveCountMax=6
+Compression=yes
+ControlMaster auto
+ControlPath /tmp/%r@%h:%p
+ControlPersist yes
+</code></pre><ul>
+<li><p>これ以外のSSHオプションはセキュリティ上の問題がある可能性があるため、有効にするには、サブネットごとやホストごとに指定したり、信頼できるネットワーク内でのみ使用するなど注意が必要。<code>StrictHostKeyChecking=no</code>、<code>ForwardAgent=yes</code>など。</p>
+</li>
+<li><p><a href="https://mosh.mit.edu/"><code>mosh</code></a>はUDPを使ったsshの代替で、(サーバー側での設定は必要であるが) 断続的な接続時に便利。</p>
+</li>
+<li><p>8進数表現のファイルパーミッションは、システム設定の際に便利だが<code>ls</code>の結果にも出てこず、間違いやすい。以下のようにして取得できる。</p>
+</li>
+</ul>
+<pre><code class="sh"><span class="built_in">stat</span> -c <span class="string">'%A %a %n'</span> /etc/timezone
+</code></pre>
+<ul>
+<li><p>何らかのコマンドの出力から、インタラクティブに値を選択したい場合は、 <a href="https://github.com/mooz/percol"><code>percol</code></a> または <a href="https://github.com/junegunn/fzf"><code>fzf</code></a>を使おう。</p>
+</li>
+<li><p>(gitを使うなど)何らかのコマンドの出力からファイルに関するやり取りをする場合は、<code>fpp</code> (<a href="https://github.com/facebook/PathPicker">PathPicker</a>)を使おう。</p>
+</li>
+<li><p>カレントディレクトリ(とサブディレクトリ)全体を、ネットワーク内に公開されたWebサーバにするなら、<code>python -m SimpleHTTPServer 7777</code> (ポート7777で公開。Python 2の場合)あるいは<code>python -m http.server 7777</code> (Python 3の場合)。</p>
+</li>
+<li><p>特権レベルでコマンドを実行するとき、rootでの実行には<code>sudo</code>、他のユーザの場合は<code>sudo -u</code>を利用。<code>su</code> または <code>sudo bash</code>で、シェルがそのユーザで起動する。<code>su -</code>でrootまたは他のユーザで新たにログインした状態がシミュレートされる。</p>
+</li>
+<li><p>異なるユーザーのシェルに移りたいと時は<code>su username</code>や<code>su - username</code>を使おう。”-“を用いることでまるで他のユーザーがログインしたかのように環境を得ることができる。スイッチ先のユーザーのパスワードを求められる。</p>
+</li>
+<li><p>コマンドラインの<a href="https://wiki.debian.org/CommonErrorMessages/ArgumentListTooLong">128K 制限</a>について知ろう。この”Argument list too long”エラーはワイルドカードに大量のファイルがマッチしてしまったときに出る一般的なものだ。(もしこれが起きたら<code>find</code> や <code>xargs</code>が代替として助けになるだろう。)</p>
+</li>
+<li><p>基本的な計算(もちろんPythonの利用が一般的だ)には<code>python</code> interpreterを使おう。例えばこんな風に。</p>
+<pre><code>&gt;&gt;&gt; 2+3
+5
+</code></pre></li>
+</ul>
+<h2 id="ファイルとデータの処理"><a href="#ファイルとデータの処理" class="headerlink" title="ファイルとデータの処理"></a>ファイルとデータの処理</h2><ul>
+<li><p>カレントディレクトリ以下のファイルをファイル名で探したいなら、<code>find . -iname &#39;*something*&#39;</code>。場所を指定せずにファイル名で検索したいなら、<code>locate something</code>をつかおう(ただし<code>updatedb</code>は最近作られたファイルはインデックスしていないであろうことに注意)。</p>
+</li>
+<li><p>ソースやデータファイルの(<code>grep -r</code>よりも高度な)一般的な検索には、<a href="https://github.com/beyondgrep/ack2"><code>ack</code></a>、<a href="https://github.com/ggreer/the_silver_searcher"><code>ag</code></a> (“the silver searcher”)、そして<a href="https://github.com/BurntSushi/ripgrep"><code>rg</code></a> (ripgrep)を使おう。</p>
+</li>
+<li><p>HTMLをテキストに変換するなら、<code>lynx -dump -stdin</code>。</p>
+</li>
+<li><p>MarkdownやHTMLなど様々な種類のドキュメントの変換には、<a href="http://pandoc.org/"><code>pandoc</code></a>を試してみるとよい。</p>
+</li>
+<li><p>XMLを扱わなくてはならないなら、<code>xmlstartlet</code>は古いがいいツールだ。</p>
+</li>
+<li><p>JSONには<a href="http://stedolan.github.io/jq/"><code>jq</code></a>を使おう。</p>
+</li>
+<li><p>YAMLには<a href="https://github.com/0k/shyaml"><code>shyaml</code></a>を。</p>
+</li>
+<li><p>ExcelやCSVファイルには、<a href="https://github.com/onyxfish/csvkit">csvkit</a>で<code>in2csv</code>、<code>csvcut</code>、<code>csvjoin</code>、<code>csvgrep</code>などが使えるようになる。</p>
+</li>
+<li><p>Amazon S3には、<a href="https://github.com/s3tools/s3cmd"><code>s3cmd</code></a>が便利で、<a href="https://github.com/bloomreach/s4cmd"><code>s4cmd</code></a>はさらに高速。AWS関連の処理にはAmazon公式の<a href="https://github.com/aws/aws-cli"><code>aws</code></a>と改善版の<a href="https://github.com/donnemartin/saws"><code>saws</code></a>が欠かせない。</p>
+</li>
+<li><p><code>sort</code>や<code>uniq</code>、さらにuniqの<code>-u</code>や<code>-d</code>オプションを知っておこう。後に出てくるワンライナーも参照。<code>comm</code>も確認しておこう。</p>
+</li>
+<li><p>複数のテキストファイルを操作するのには、<code>cut</code>と<code>paste</code>、<code>join</code>は知っておこう。<code>cut</code>はみんな使っているが、<code>join</code>は忘れられている。</p>
+</li>
+<li><p><code>wc</code>を理解し、改行(<code>-l</code>)、文字(<code>-m</code>)、単語(<code>-w</code>)、バイト(<code>-c</code>)それぞれの数え方も知っておこう。</p>
+</li>
+<li><p>標準入力をファイルと標準出力の両方に出す<code>tee</code>を理解しよう。<code>ls -al | tee file.txt</code>のように使う。</p>
+</li>
+<li><p>グルーピング、フィールドを入れ替える、統計的な計算といったもっと複雑な作業は<a href="https://www.gnu.org/software/datamash/"><code>datamash</code></a>の利用を検討しよう。</p>
+</li>
+<li><p>ロケールは、ソートの順序(照合順序)やパフォーマンスなど、たくさんのコマンドラインツールに微妙なところで影響することを覚えておこう。多くのLinuxディストリビューションでは、<code>LANG</code>や他のロケール変数はUS Englishのようなローカルな設定になっている。ロケールを変更するとソート順序が変わることに注意しよう。また、国際化(i18n)対応のルーチンはソートやその他の処理を<em>何倍も</em>遅く実行するようになる点も知っておこう。場合(設定の処理や一意性を見つける処理など)によっては、<code>export LC_ALL=C</code>としてしまい遅いi18n対応の処理を完全に無視してしまうことも可能だ。</p>
+</li>
+<li><p><code>TZ=Pacific/Fiji date</code>のように起動時に変数を前につけることで、特定のコマンドの環境変数をセットすることができる。</p>
+</li>
+<li><p>単純なデータ加工のために<code>awk</code>と<code>sed</code>の基礎を身につけよう。<a href="#ワンライナー">ワンライナー</a>を参照。</p>
+</li>
+<li><p>1つあるいは複数のファイル内の文字列を直接置き換えてしまうには、</p>
+</li>
+</ul>
+<pre><code class="sh">perl -pi.bak -e <span class="string">'s/old-string/new-string/g'</span> my-files-*.txt
+</code></pre>
+<ul>
+<li>複数のファイル名の変更やファイル内の検索や置換には、<a href="https://github.com/jlevy/repren"><code>repren</code></a>を使ってみよう。(場合によっては<code>rename</code>コマンドでも複数のファイル名変更ができるが、すべてのLinuxディストリビューションで挙動が同じであるわけではないので注意が必要。)</li>
+</ul>
+<pre><code class="sh"><span class="comment"># foo -&gt; barへとファイル名、ディレクトリ名、ファイルの中身を変更する:</span>
+repren --full --preserve-case --from foo --to bar .
+<span class="comment"># バックアップファイルを元に戻す whatever.bak -&gt; whatever:</span>
+repren --renames --from <span class="string">'(.*)\.bak'</span> --to <span class="string">'\1'</span> *.bak
+<span class="comment"># 上記と同じものをrenameを使って:</span>
+rename <span class="string">'s/\.bak$//'</span> *.bak
+</code></pre>
+<ul>
+<li>マニュアルページにあるように <code>rsync</code> は非常に高速で万能なファイルコピーの道具である。マシーン間のファイルを同期させることでよく知られているが、ローカルの場合でも同様に有用である。また、大量のファイルを削除する<a href="https://web.archive.org/web/20130929001850/http://linuxnote.net/jianingy/en/linux/a-fast-way-to-remove-huge-number-of-files.html">高速な方法</a>としても利用できる:</li>
+</ul>
+<pre><code class="sh">mkdir empty &amp;&amp; rsync -r --delete empty/ some-dir &amp;&amp; rmdir some-dir
+</code></pre>
+<ul>
+<li><p>実行ファイルの進捗を監視したい場合、<a href="http://www.ivarch.com/programs/pv.shtml"><code>pv</code></a>、<a href="https://github.com/dmerejkowsky/pycp"><code>pycp</code></a>、 <a href="https://github.com/dspinellis/pmonitor"><code>pmonitor</code></a>、<a href="https://github.com/Xfennec/progress"><code>progress</code></a>や<code>rsync --progress</code>を使おう。ブロックレベルバックアップは<code>dd status=progress</code>だ。</p>
+</li>
+<li><p>ファイルからランダムな行を抜き出すには<code>shuf</code></p>
+</li>
+<li><p><code>sort</code>のオプションを理解しよう。数値に対しては<code>-n</code>を使い、人間にとって読みやすい形式の数値の場合(例えば、<code>du -h</code>の出力)は<code>-h</code>を使おう。キーがどのように処理されるのか(<code>-t</code>や<code>-k</code>)を知ろう。特に、最初の列だけでソートするには<code>-k1,1</code>と書く必要があり、<code>-k1</code>だと全行を見てソートされるという点に注意。</p>
+</li>
+<li><p>stableな(安定した)ソート(<code>sort -s</code>)は便利。例えば、始めに1列目でソートし、それから2列目でソートするなら、<code>sort -k1,1 | sort -s -k2,2</code>とすればよい。</p>
+</li>
+<li><p>Bashのコマンドライン上でタブを表現する必要がある場合、<strong>ctrl-v</strong> <strong>[Tab]</strong>を入力するか<code>$&#39;\t&#39;</code> (コピペするなら後者の方がいいかも)。</p>
+</li>
+<li><p>ソースコードにパッチを当てる基本のツールは<code>diff</code>と<code>patch</code>。<code>diff</code>や横並びの<code>sdiff</code>の統計情報を見るなら<code>diffstat</code>も参照しよう。<code>diff -r</code>だと、ディレクトリ全体に対して実行される。変更点の概要を見るなら<code>diff -r tree1 tree2 | diffstat</code>。<code>vimdiff</code>ではファイルの比較と編集が可能。</p>
+</li>
+<li><p>バイナリファイルなら、単純な16進ダンプを見るのに<code>hd</code>、バイナリエディタには<code>bvi</code>。</p>
+</li>
+<li><p>同じくバイナリファイルに関して、テキストを抽出したいなら<code>strings</code>(と<code>grep</code>などの組み合わせ)。</p>
+</li>
+<li><p>バイナリのdiff(デルタ圧縮)なら、<code>xdelta3</code>。</p>
+</li>
+<li><p>テキストエンコーディングの変換は<code>iconv</code>を使おう。あるいはより高度なツールとして<code>uconv</code>もあり、こちらはUnicodeの高度な処理が可能。例えば以下のコマンドでは小文字に変換しアクセント記号を取り除く(展開してから削除)。</p>
+</li>
+</ul>
+<pre><code class="sh">uconv -f utf-8 -t utf-8 -x <span class="string">'::Any-Lower; ::Any-NFD; [:Nonspacing Mark:] &gt;; ::Any-NFC; '</span> &lt; input.txt &gt; output.txt
+</code></pre>
+<ul>
+<li><p>ファイルを分割するなら<code>split</code>(サイズで分割)と<code>csplit</code>(パターンで分割)。</p>
+</li>
+<li><p>日時について。現在日時を取得するには<a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>が助けになる。<code>date -u +&quot;%Y-%m-%dT%H:%M:%SZ&quot;</code> を使おう。(他のオプションは<a href="https://stackoverflow.com/questions/7216358/date-command-on-os-x-doesnt-have-iso-8601-i-option">こちら</a> <a href="https://unix.stackexchange.com/questions/164826/date-command-iso-8601-option">problematic</a>)。日付や時間の表現を扱うには、<a href="http://www.fresse.org/dateutils/"><code>dateutils</code></a>にあるように、<code>dateadd</code>、 <code>datediff</code>、 <code>strptime</code> などを使いましょう。</p>
+</li>
+<li><p>圧縮ファイルの操作は<code>zless</code>、<code>zmore</code>、<code>zcat</code>、<code>zgrep</code>。</p>
+</li>
+<li><p><code>chattr</code>でファイル権限に代わる低階層のファイル属性情報をセットできる。例えば、意図しないファイル削除を防ぐフラグはこうやって立てる。<code>sudo chattr +i /critical/directory/or/file</code></p>
+</li>
+<li><p>ファイルの権限を保存、リストアするには<code>getfacl</code>と<code>setfacl</code>を使おう。例は</p>
+<pre><code class="sh">getfacl -R /some/path &gt; permissions.txt
+setfacl --restore=permissions.txt
+</code></pre>
+</li>
+<li>空ファイルを素早く作るには<code>truncate</code>(<a href="https://en.wikipedia.org/wiki/Sparse_file">sparse file</a>を作成)、<code>fallocate</code>(ext4, xfs, btrfs とocfs2ファイルシステム)、<code>xfs_mkfile</code>(xfsprogs packageにあるほぼ全てのファイルシステム)、<code>mkfile</code> (Solaris、Mac OSといったUnix関連システム)</li>
+</ul>
+<h2 id="システムのデバッグ"><a href="#システムのデバッグ" class="headerlink" title="システムのデバッグ"></a>システムのデバッグ</h2><ul>
+<li><p>Webのデバッグなら<code>curl</code>や<code>curl -l</code>が便利で、<code>wget</code>も同様、よりモダンなのは<a href="https://github.com/jkbrzt/httpie"><code>httpie</code></a>。</p>
+</li>
+<li><p>CPUやディスクのステータスを知るには、標準的なツールは<code>top</code> (または、より良い<code>htop</code>)、 <code>iostat</code>、 <code>iotop</code>。<code>iostat -mxz 15</code>を使って、基本的なCPUの情報やパーティッション単位でのディスクの詳細情報やパフォーマンスについて調べましょう。</p>
+</li>
+<li><p>ネットワークの状態の監視には、<code>netstat</code>や<code>ss</code>。</p>
+</li>
+<li><p>手早くシステムで何が起きているのかを調べるには、<code>dstat</code>が便利。より詳しく見るには、<a href="https://github.com/nicolargo/glances"><code>glances</code></a>。</p>
+</li>
+<li><p>メモリのステータスを知るには、<code>free</code>あるいは<code>vmstat</code>を実行し、その出力の意味を理解しよう。特に、”cached”の値はLinuxカーネルにファイルキャッシュとして保持されているメモリ量であり、”free”の値を見る際に考慮すべきであることに注意しよう。</p>
+</li>
+<li><p>Javaのシステムのデバッグはまた違う困ったところがあるが、Oracleあるいは他のJVMにも共通しているシンプルなトリックは、<code>kill -3 &lt;pid&gt;</code>でフルスタックトレースとヒープの概要が標準出力あるいはログにダンプされる(世代別GCの詳細も参考程度だが含まれている)。JDKの <code>jps</code>、 <code>jstat</code>、 <code>jstack</code>、 <code>jmap</code> も便利で、<a href="https://github.com/aragozin/jvm-tools">SJK tools</a>はより高度なツールである。</p>
+</li>
+<li><p>改良版tracerouteとして<a href="http://www.bitwizard.nl/mtr/"><code>mtr</code></a>を使ってネットワークの問題を調査しよう。</p>
+</li>
+<li><p>ディスクがいっぱいになっている理由を調べるには、<a href="https://dev.yorhel.nl/ncdu"><code>ncdu</code></a>を使うと<code>du -sh *</code>より時間が節約できる。</p>
+</li>
+<li><p>帯域を使っているのがどのソケットやプロセスなのかを見つけるには、<a href="http://www.ex-parrot.com/~pdw/iftop/"><code>iftop</code></a>あるいは<a href="https://github.com/raboof/nethogs"><code>nethogs</code></a>を試そう。</p>
+</li>
+<li><p><code>ab</code>(Apacheに付属)は、Webサーバのパフォーマンスをざっくりチェックするのに便利。より複雑なテストには<code>siege</code>を試そう。</p>
+</li>
+<li><p>より確実なネットワークのデバッグは<a href="https://wireshark.org/"><code>wireshark</code></a>、<a href="https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html"><code>tshark</code></a>、<a href="http://ngrep.sourceforge.net/"><code>ngrep</code></a>。</p>
+</li>
+<li><p><code>strace</code>と<code>ltrace</code>について知っておこう。プログラムの実行に失敗したりハングしたりクラッシュしたりして、その理由が分からない、あるいはパフォーマンスに関する一般的情報を知りたいなら、このツールが役立つはずだ。プロファイリングのオプション(<code>-c</code>)や起動中のプロセスにアタッチする機能(<code>-p</code>)も覚えておこう。</p>
+</li>
+<li><p>共有ライブラリをチェックするなら<code>ldd</code>を覚えておこう。でも<a href="http://www.catonmat.net/blog/ldd-arbitrary-code-execution/">怪しいファイルを指定して実行しないように</a></p>
+</li>
+<li><p>起動中のプロセスに<code>gdb</code>で接続し、そのスタックトレースを取る方法を知ろう。</p>
+</li>
+<li><p><code>/proc</code>以下のファイルを使おう。今起こっている問題をデバッグするのには素晴らしく便利だ。例えば、<code>/proc/cpuinfo</code>、<code>/proc/meminfo</code>、<code>/proc/cmdline</code>、<code>/proc/xxx/cwd</code>、<code>/proc/xxx/ece</code>、<code>/proc/xxx/fd/</code>、<code>/proc/xxx/smaps</code> (ここで、<code>xxx</code>はプロセスIDまたはPIDを意味する)。</p>
+</li>
+<li><p>過去に何か問題が起きたことの原因を探るなら、<a href="http://sebastien.godard.pagesperso-orange.fr/"><code>sar</code></a>がとても便利。CPUやメモリ、ネットワークなどの過去の統計情報を見られる。</p>
+</li>
+<li><p>さらに深いシステムとパフォーマンスの分析には、<code>stap</code> (<a href="https://sourceware.org/systemtap/wiki">SystemTap</a>)、<a href="https://en.wikipedia.org/wiki/Perf_(Linux"><code>perf</code></a>)、<br><a href="https://github.com/draios/sysdig"><code>sysdig</code></a>。</p>
+</li>
+<li><p>どのOSを利用しているかを<code>uname</code>や<code>uname -a</code> (Unixカーネル情報)で確認しよう。どのディストリビューションを使っているかは<code>lsb_release -a</code> (ディストリビューション情報)。</p>
+</li>
+<li><p>何かいつもと違うおかしなこと(大抵ハードウェアかドライバ関連の問題だ)が起きていたら、<code>dmesg</code>を実行しよう。</p>
+</li>
+<li><p><code>du</code>で表示されたディスクースペースがファイルを消しても空かなかった場合、そのファイルがプロセスに使われているかどうかこうやって確認しよう。<code>lsof | grep deleted | grep &quot;filename-of-my-big-file&quot;</code></p>
+</li>
+</ul>
+<h2 id="ワンライナー"><a href="#ワンライナー" class="headerlink" title="ワンライナー"></a>ワンライナー</h2><p>コマンドをまとめて使う例をいくつか。</p>
+<ul>
+<li><code>sort</code>や<code>uniq</code>を使ってテキストファイルの共通部分、結合、差異を求める時に特に便利なのが以下のやり方。<code>a</code>と<code>b</code>はそれぞれ内容に重複のないテキストファイルとする。この方法は高速で、数GB程度までの任意のファイルサイズで動作する(<code>/tmp</code>が小さなルートパーティションにある場合は<code>-T</code>オプションをつける必要があるが、ソートはメモリ内で行われるとは限らない)。上述の<code>LC_ALL</code>と<code>sort</code>の<code>-u</code>オプションも参照のこと。</li>
+</ul>
+<pre><code class="sh">cat a b | sort | uniq &gt; c   <span class="comment"># cはaとbの和集合</span>
+cat a b | sort | uniq -d &gt; c   <span class="comment"># cはaとbの共通部分</span>
+cat a b b | sort | uniq -u &gt; c   <span class="comment"># cはaとbの差異</span>
+</code></pre>
+<ul>
+<li><p><code>grep . *</code>(各行にファイル名が付く)や、<code>head -100 *</code> (ファイル毎にヘッダーが付く)を使って手軽にディレクトリ内の全てのファイルの中身を確認できる。設定ファイルが含まれるような<code>/sys</code>や<code>/proc</code>や<code>/etc/</code>に対して非常に便利である。</p>
+</li>
+<li><p>テキストファイルの3列目を全て足し合わせるには以下で(Pythonで同じことをやるに比べて3倍速く3分の1の長さで書ける)。</p>
+</li>
+</ul>
+<pre><code class="sh">awk <span class="string">'{ x += $3 } END { print x }'</span> myfile
+</code></pre>
+<ul>
+<li>ファイルツリーのサイズやデータを確認したいなら、以下は再帰的な<code>ls -l</code>と同じだが<code>ls -lR</code>より見やすい。</li>
+</ul>
+<pre><code class="sh">find . -<span class="built_in">type</span> f -ls
+</code></pre>
+<ul>
+<li><p>Webサーバのログのようなテキストファイルがあり、各行には例えばURLの中に出てくる<code>acct_id</code>のような特定の値が現れるとしよう。<code>acct_id</code>が何回リクエストされているかを集計するには、</p>
+<pre><code class="sh">egrep -o <span class="string">'acct_id=[0-9]+'</span> access.log | cut -d= -f2 | sort | uniq -c | sort -rn
+</code></pre>
+</li>
+<li><p>継続的に変更を監視する場合 <code>watch</code>を使う。例えば、ディレクトリのファイルの変更を確認するには <code>watch -d -n 2 &#39;ls -rtlh | tail&#39;</code> となり、wifi設定などのネットワーク設定関係のトラブルシューティングでは <code>watch -d -n 2 ifconfig</code>。</p>
+</li>
+<li><p>このドキュメントからランダムに項目を抜き出すには以下の関数を実行しよう(Markdownをパースし、アイテムを抽出する)。</p>
+</li>
+</ul>
+<pre><code class="sh"><span class="keyword">function</span> <span class="function"><span class="title">taocl</span></span>() {
+  curl -s https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README.md |
+    pandoc -f markdown -t html |
+    xmlstarlet fo --html --dropdtd |
+    xmlstarlet sel -t -v <span class="string">"(html/body/ul/li[count(p)&gt;0])[<span class="variable">$RANDOM</span> mod last()+1]"</span> |
+    xmlstarlet unesc | fmt -80
+}
+</code></pre>
+<h2 id="目立たないが便利なもの"><a href="#目立たないが便利なもの" class="headerlink" title="目立たないが便利なもの"></a>目立たないが便利なもの</h2><ul>
+<li><p><code>expr</code>: 算術演算、論理演算、または正規表現の評価を実行</p>
+</li>
+<li><p><code>m4</code>: シンプルなマクロプロセッサ</p>
+</li>
+<li><p><code>yes</code>: 文字列をたくさん表示</p>
+</li>
+<li><p><code>cal</code>: いい感じのカレンダー</p>
+</li>
+<li><p><code>env</code>: コマンドを実行(スクリプト内で重宝する)</p>
+</li>
+<li><p><code>printenv</code>: 環境変数を表示する(デバッグやスクリプト内での使用に便利)</p>
+</li>
+<li><p><code>look</code>: 文字列で始まる英単語(またはファイル内の行)を見つける</p>
+</li>
+<li><p><code>cut</code>、 <code>paste</code>、<code>join</code>: データの操作</p>
+</li>
+<li><p><code>fmt</code>: テキストの段落をフォーマットする</p>
+</li>
+<li><p><code>pr</code>: テキストをページとカラムにフォーマットする</p>
+</li>
+<li><p><code>fold</code>: テキストの行を分割</p>
+</li>
+<li><p><code>column</code>: テキストをカラムあるいはテーブルにフォーマット</p>
+</li>
+<li><p><code>expand</code> と <code>unexpand</code>: タブとスペースの相互変換</p>
+</li>
+<li><p><code>nl</code>: 行数を表示</p>
+</li>
+<li><p><code>seq</code>: 数字を表示</p>
+</li>
+<li><p><code>bc</code>: 計算機</p>
+</li>
+<li><p><code>factor</code>: 整数を因数分解</p>
+</li>
+<li><p><a href="https://gnupg.org/"><code>gpg</code></a>: ファイルの暗号化と署名</p>
+</li>
+<li><p><code>toe</code>: terminfoのエントリのテーブルを表示</p>
+</li>
+<li><p><code>nc</code>: ネットワークのデバッグとデータ転送</p>
+</li>
+<li><p><code>socat</code>: ソケットリレーとTCPポートのフォワーダ(<code>netcat</code>と同等)</p>
+</li>
+<li><p><a href="https://github.com/mattthias/slurm"><code>slurm</code></a>: ネットワークトラフィックの可視化</p>
+</li>
+<li><p><code>dd</code>: データをファイルあるいはデバイス間で移動</p>
+</li>
+<li><p><code>file</code>: ファイルの種類を特定</p>
+</li>
+<li><p><code>tree</code>: ディレクトリとサブディレクトリをツリーで表示。<code>ls</code>に似ているが再帰的に動く</p>
+</li>
+<li><p><code>stat</code>: ファイルの情報</p>
+</li>
+<li><p><code>time</code>: コマンドを実行して処理時間を計測</p>
+</li>
+<li><p><code>timeout</code>: コマンドを実行し、指定時間経過後にプロセスを停止する</p>
+</li>
+<li><p><code>lockfile</code>: セマフォファイルを生成する。これは<code>rm -f</code>のみで削除可能。</p>
+</li>
+<li><p><code>logrotate</code>: ログをローテート、圧縮、メール送信</p>
+</li>
+<li><p><code>watch</code>: コマンドを繰り返し実行する。変更部分の強調表示もできる。</p>
+</li>
+<li><p><code>tac</code>: ファイルを逆から表示</p>
+</li>
+<li><p><code>shuf</code>: ファイルからランダムに選んだ行を表示</p>
+</li>
+<li><p><code>comm</code>: ソート済みファイルの行を比較</p>
+</li>
+<li><p><code>pv</code>: パイプ経由でデータの進行状況をモニタリング</p>
+</li>
+<li><p><code>sponge</code>: 書き込み前に全ての入力を読み込む。例えば、<code>grep -v something some-file | sponge some-file</code> のように、入力と同じファイルに書き込む際に便利。</p>
+</li>
+<li><p><code>hd</code>、<code>hexdump</code>、<code>xxd</code>、<code>biew</code>、<code>bvi</code>: バイナリファイルのダンプと編集</p>
+</li>
+<li><p><code>strings</code>: バイナリファイルからテキストを抽出</p>
+</li>
+<li><p><code>tr</code>: 文字の置き換えと操作</p>
+</li>
+<li><p><code>iconv</code> あるいは <code>uconv</code>: 文字エンコーディングの変換</p>
+</li>
+<li><p><code>split</code> と <code>csplit</code>: ファイルを分割</p>
+</li>
+<li><p><code>units</code>: 単位の変換と計算。2週間あたりのハロン(訳注 : 長さの単位)からまばたきごとのトゥウィップまで( <code>/usr/share/units/definitions.units</code>も参照のこと)</p>
+</li>
+<li><p><code>apg</code>: ランダムなパスワードを生成</p>
+</li>
+<li><p><code>7z</code>: 圧縮率の高いファイル圧縮</p>
+</li>
+<li><p><code>ldd</code>: 動的ライブラリの情報</p>
+</li>
+<li><p><code>nm</code>: オブジェクトファイルからシンボルを表示</p>
+</li>
+<li><p><code>ab</code>: Webサーバのベンチーマーク</p>
+</li>
+<li><p><code>strace</code>: システムコールのデバッグ</p>
+</li>
+<li><p><a href="http://www.bitwizard.nl/mtr/"><code>mtr</code></a>: ネットワークデバッグのためのより高機能なtraceroute</p>
+</li>
+<li><p><code>cssh</code>: ビジュアルな並列シェル</p>
+</li>
+<li><p><code>rsync</code>: ファイルやフォルダをSSH経由またはローカルファイルシステム内で同期</p>
+</li>
+<li><p><a href="https://wireshark.org/"><code>wireshark</code></a> と <a href="https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html"><code>tshark</code></a>: パケットキャプチャとネットワークデバッギング</p>
+</li>
+<li><p><a href="http://ngrep.sourceforge.net/"><code>ngrep</code></a>: ネットワーク層のgrep</p>
+</li>
+<li><p><code>host</code> と <code>dig</code>: DNS名前解決</p>
+</li>
+<li><p><code>lsof</code>:プロセスのファイルディスクリプタとソケット情報</p>
+</li>
+<li><p><code>dstat</code>: 便利なシステム情報</p>
+</li>
+<li><p><a href="https://github.com/nicolargo/glances"><code>glances</code></a>: 高レベルに複数のサブシステムの概要を把握</p>
+</li>
+<li><p><code>iostat</code>: ディスクの使用状況</p>
+</li>
+<li><p><code>mpstat</code>: CPUの使用状況</p>
+</li>
+<li><p><code>vmstat</code>: メモリの使用状況</p>
+</li>
+<li><p><code>htop</code>: topの改良版</p>
+</li>
+<li><p><code>last</code>: ログイン履歴</p>
+</li>
+<li><p><code>w</code>: 誰がログインしているか</p>
+</li>
+<li><p><code>id</code>: ユーザやグループの情報</p>
+</li>
+<li><p><a href="http://sebastien.godard.pagesperso-orange.fr/"><code>sar</code></a>: システム統計情報の履歴</p>
+</li>
+<li><p><a href="http://www.ex-parrot.com/~pdw/iftop/"><code>iftop</code></a> または <a href="https://github.com/raboof/nethogs"><code>nethogs</code></a>: ソケットあるいはプロセスごとのネットワーク使用量</p>
+</li>
+<li><p><code>ss</code>: ソケットの統計情報</p>
+</li>
+<li><p><code>dmesg</code>: 起動時とシステムのエラーメッセージ</p>
+</li>
+<li><p><code>sysctl</code>: Linuxカーネルパラメータの確認および設定</p>
+</li>
+<li><p><code>hdparm</code>: SATA/ATAディスクの操作やパフォーマンス確認</p>
+</li>
+<li><p><code>lsblk</code>: ブロックデバイスの一覧。ディスクとディスクパーティションのツリービュー</p>
+</li>
+<li><p><code>lshw</code>、<code>lscpu</code>、<code>lspci</code>、<code>lsusb</code>、<code>dmidecode</code>: CPUやBIOS、RAID、グラフィック、その他デバイスなどのハードウェア情報</p>
+</li>
+<li><p><code>lsmod</code>、<code>modinfo</code>: カーネルのモジュールリストとモジュール情報</p>
+</li>
+<li><p><code>fortune</code>、 <code>ddate</code>、<code>sl</code>: んー、あー、これは蒸気機関車やZippyの引用句が「便利」だと思うかどうかによる</p>
+</li>
+</ul>
+<h2 id="OS-X用のもの"><a href="#OS-X用のもの" class="headerlink" title="OS X用のもの"></a>OS X用のもの</h2><p>これらは<em>MacOS用</em>の項目です。</p>
+<ul>
+<li><p>パッケージ管理は<code>brew</code> (Homebrew)や<code>port</code> (MacPorts)を使う。上記の多くのコマンドをMacOSにインストールできる。</p>
+</li>
+<li><p>コマンドの出力をクリップボードにコピーする<code>pbcopy</code>とクリップボードから出力する<code>pbpaste</code>。</p>
+</li>
+<li><p>OptionキーをaltキーとしてMac OSのターミナルで使う(上述の<strong>alt-b</strong>、<strong>alt-f</strong>などを使う場合)には、環境設定 -&gt; 設定 -&gt; キーボード で、”メタキーとしてoptionキーを使用”を選択。</p>
+</li>
+<li><p>デスクトップアプリケーションでファイルを開くには、<code>open</code>、<code>open -a /Applications/Whatever.app</code>。</p>
+</li>
+<li><p>Spotlight: <code>mdfind</code>でファイルを検索し、メタデータ(画像ファイルのEXIFの情報など)を<code>mdls</code>で表示。</p>
+</li>
+<li><p>Mac OSはBSD Unixベースであるため、多くのコマンド(例えば、<code>ps</code>、<code>ls</code>、<code>tail</code>、<code>awk</code>、<code>sed</code>)では、Unix System VとGNUツールの違いに影響されて、Linuxのものと比べて微妙な違いが多く含まれている。違いがあるかについては、マニュアルページのタイトルに”BSD General Commands Manual”と書かれているかどうかで判断できる。場合によっては、GNUバージョンをインストール可能である(例えば、<code>gawk</code>や<code>gsed</code>で、GNUのawkとsedに対応)。クロスプラットフォームのbashスクリプトを書く場合には、そのようなコマンドは避ける(Pythonや<code>perl</code>の利用を検討)か十分なテストが必要である。</p>
+</li>
+<li><p>Mac OSのリリース情報を取得するには、<code>sw_vers</code>。</p>
+</li>
+</ul>
+<h2 id="Windows専用"><a href="#Windows専用" class="headerlink" title="Windows専用"></a>Windows専用</h2><p>これらは<em>Windows用</em>の項目です。</p>
+<h3 id="Windows下でUnixツールを手に入れる方法"><a href="#Windows下でUnixツールを手に入れる方法" class="headerlink" title="Windows下でUnixツールを手に入れる方法"></a>Windows下でUnixツールを手に入れる方法</h3><ul>
+<li><p><a href="https://cygwin.com/">Cygwin</a>をMicrosoft WindowsでインストールしてUnixシェルの力を手にしよう。このドキュメントで説明されている大部分はびっくり箱みたいに独創的だ。</p>
+</li>
+<li><p>Windows10であれば<a href="https://msdn.microsoft.com/commandline/wsl/about">Windows Subsystem for Linux (WSL)</a>を使える。Unixコマンドラインや親しみのあるBashを提供してくれる。</p>
+</li>
+<li><p>windows上で、主にGNUデベロッパーツール(GCCなど)を使いたい場合、<a href="http://www.mingw.org/">MinGW</a>や<a href="http://www.mingw.org/wiki/msys">MSYS</a>を検討しよう。bash、gawk、make、grepを提供してくれる。MSYSはCygwinと比べると全ての機能を持っているわけではない。MinGWはUnixツールのネイティブWindowsポートを作成するのに特に有効だ。</p>
+</li>
+<li><p>Windows配下でUnixの見た目と操作感を得るもう一つの方法は<a href="https://github.com/dthree/cash">Cash</a>だ。本当に限られたUnixコマンドやコマンドラインオプションしかこの環境では利用できないので注意が必要だ。</p>
+</li>
+</ul>
+<h3 id="使えるWindowsコマンドラインツール"><a href="#使えるWindowsコマンドラインツール" class="headerlink" title="使えるWindowsコマンドラインツール"></a>使えるWindowsコマンドラインツール</h3><ul>
+<li><p><code>wmic</code>を使って学ぶことで、Windowsシステム管理者タスクの大部分をコマンドラインで記述、実行することができる。</p>
+</li>
+<li><p><code>ping</code>、<code>ipconfig</code>、<code>tracert</code>、<code>netstat</code>などのWindows固有のコマンドラインも便利だと思えるはずだ。</p>
+</li>
+<li><p><code>Rundll32</code>を実行することによって<a href="http://www.thewindowsclub.com/rundll32-shortcut-commands-windows">便利なWindowsタスク</a>を利用することができる。</p>
+</li>
+</ul>
+<h3 id="Cygwinの秘訣とコツ"><a href="#Cygwinの秘訣とコツ" class="headerlink" title="Cygwinの秘訣とコツ"></a>Cygwinの秘訣とコツ</h3><ul>
+<li><p>Cygwinのパッケージマネージャーで追加のUnixプログラムをインストールしよう。</p>
+</li>
+<li><p><code>mintty</code>をコマンドラインウィンドウとして使おう</p>
+</li>
+<li><p><code>/dev/clipboard</code>でWindowsのクリップボードにアクセスしてみよう。</p>
+</li>
+<li><p>登録されたアプリケーションで任意のファイルを開くためには<code>cygstart</code>を起動しよう。</p>
+</li>
+<li><p><code>regtool</code>でWindowsレジストリにアクセスしよう。</p>
+</li>
+<li><p><code>C:\</code>WindowsドライブのパスはCygwin下では<code>/cygdrive/c</code>なので注意が必要だ。また、Cygwinの<code>/</code>はWindowsの<code>C:\cygwin</code>だ。<code>cygpath</code>を使ってCygwinスタイルとWindowsスタイルのパスを切り替えられる。これはWindowsプログラムを実行するスクリプトでとても有効だ。</p>
+</li>
+</ul>
+<h2 id="さらなるリソース"><a href="#さらなるリソース" class="headerlink" title="さらなるリソース"></a>さらなるリソース</h2><ul>
+<li><a href="https://github.com/alebcay/awesome-shell">awesome-shell</a>: シェルのツールやリソースのまとめ</li>
+<li><a href="https://github.com/herrbischoff/awesome-osx-command-line">awesome-osx-command-line</a>: より詳しいMac OSのコマンドラインガイド</li>
+<li><a href="http://redsymbol.net/articles/unofficial-bash-strict-mode/">Strict mode</a>: よりよいシェルスクリプトを書くために</li>
+<li><a href="https://github.com/koalaman/shellcheck">shellcheck</a>: シェルスクリプト(本来、bash/sh/zsh用)の静的解析ツール</li>
+<li><a href="http://www.dwheeler.com/essays/filenames-in-shell.html">Filenames and Pathnames in Shell</a>: シェルスクリプトでファイル名を正しく扱うために</li>
+<li><a href="http://datascienceatthecommandline.com/#tools">Data Science at the Command Line</a>: 同タイトルの書籍から引用されているデータサイエンスで役に立つコマンドやツール</li>
+</ul>
+<h2 id="免責事項"><a href="#免責事項" class="headerlink" title="免責事項"></a>免責事項</h2><p>ごく一部の例外はありますが、コードは誰でも読めるように書かれている。力には責任が伴う。Bashで<em>できる</em>からといって、そうすべき必要があるという意味ではない！ ;)</p>
+<h2 id="ライセンス"><a href="#ライセンス" class="headerlink" title="ライセンス"></a>ライセンス</h2><p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a></p>
+<p>このドキュメントは<a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International Licene</a>でライセンスされる。</p>

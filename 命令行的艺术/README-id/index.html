@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="🌍Čeština ∙ Deutsch ∙ Ελληνικά ∙ English ∙ Español ∙ Français ∙ Indonesia ∙ Italiano ∙ 日本語 ∙ 한국어 ∙ Português ∙ Română ∙ Русский ∙ Slovenščina ∙ Українська ∙ 简体中文 ∙ 繁體中文 Seni dalam Baris Perintah   Met">
+<meta property="og:type" content="article">
+<meta property="og:title" content="优诺网">
+<meta property="og:url" content="http://yoursite.com/命令行的艺术/README-id/index.html">
+<meta property="og:site_name" content="优诺网">
+<meta property="og:description" content="🌍Čeština ∙ Deutsch ∙ Ελληνικά ∙ English ∙ Español ∙ Français ∙ Indonesia ∙ Italiano ∙ 日本語 ∙ 한국어 ∙ Português ∙ Română ∙ Русский ∙ Slovenščina ∙ Українська ∙ 简体中文 ∙ 繁體中文 Seni dalam Baris Perintah   Met">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img.shields.io/badge/%3f-Ask%20a%20Question-ff69b4.svg">
+<meta property="og:image" content="https://badges.gitter.im/Join%20Chat.svg">
+<meta property="og:image" content="http://yoursite.com/命令行的艺术/README-id/cowsay.png">
+<meta property="og:image" content="https://i.creativecommons.org/l/by-sa/4.0/88x31.png">
+<meta property="og:updated_time" content="2019-05-27T22:27:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="优诺网">
+<meta name="twitter:description" content="🌍Čeština ∙ Deutsch ∙ Ελληνικά ∙ English ∙ Español ∙ Français ∙ Indonesia ∙ Italiano ∙ 日本語 ∙ 한국어 ∙ Português ∙ Română ∙ Русский ∙ Slovenščina ∙ Українська ∙ 简体中文 ∙ 繁體中文 Seni dalam Baris Perintah   Met">
+<meta name="twitter:image" content="https://img.shields.io/badge/%3f-Ask%20a%20Question-ff69b4.svg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/命令行的艺术/README-id/">
+
+
+
+
+
+  <title> | 优诺网</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">优诺网</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/命令行的艺术/README-id/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="youknow2019">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="优诺网">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T22:13:41+08:00">
+                2019-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/命令行的艺术/README-id/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="命令行的艺术/README-id/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  5.2k
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>🌍<br><em><a href="README-cs.md">Čeština</a> ∙ <a href="README-de.md">Deutsch</a> ∙ <a href="README-el.md">Ελληνικά</a> ∙ <a href="README.md">English</a> ∙ <a href="README-es.md">Español</a> ∙ <a href="README-fr.md">Français</a> ∙ <a href="README-id.md">Indonesia</a> ∙ <a href="README-it.md">Italiano</a> ∙ <a href="README-ja.md">日本語</a> ∙ <a href="README-ko.md">한국어</a> ∙ <a href="README-pt.md">Português</a> ∙ <a href="README-ro.md">Română</a> ∙ <a href="README-ru.md">Русский</a> ∙ <a href="README-sl.md">Slovenščina</a> ∙ <a href="README-uk.md">Українська</a> ∙ <a href="README-zh.md">简体中文</a> ∙ <a href="README-zh-Hant.md">繁體中文</a></em></p>
+<h1 id="Seni-dalam-Baris-Perintah"><a href="#Seni-dalam-Baris-Perintah" class="headerlink" title="Seni dalam Baris Perintah"></a>Seni dalam Baris Perintah</h1><p><a href="https://airtable.com/shrzMhx00YiIVAWJg" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/%3f-Ask%20a%20Question-ff69b4.svg" alt="Ajukan pertanyaan"></a></p>
+<p><a href="https://gitter.im/jlevy/the-art-of-command-line?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge" target="_blank" rel="noopener"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Bergabung dengan obrolan di https://gitter.im/jlevy/the-art-of-command-line"></a></p>
+<ul>
+<li><a href="#meta">Meta</a></li>
+<li><a href="#dasar-dasar">Dasar-dasar</a></li>
+<li><a href="#penggunaan-sehari-hari">Penggunaan sehari-hari</a></li>
+<li><a href="#mengolah-berkas-dan-data">Mengolah berkas dan data</a></li>
+<li><a href="#analisa-sistem">Analisa Sistem</a></li>
+<li><a href="#perintah-satu-baris">Perintah satu baris</a></li>
+<li><a href="#tidak-penting-tapi-bermanfaat">Tidak penting tapi bermanfaat</a></li>
+<li><a href="#khusus-os-x">Khusus OS X</a></li>
+<li><a href="#khusus-windows">Khusus Windows</a></li>
+<li><a href="#bacaan-lebih-lanjut">Bacaan lebih lanjut</a></li>
+<li><a href="#penyangkalan">Penyangkalan</a></li>
+</ul>
+<p><img src="/命令行的艺术/README-id/cowsay.png" alt="curl -s &#39;https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README.md&#39; | egrep -o &#39;`\w+`&#39; | tr -d &#39;`&#39; | cowsay -W50"></p>
+<p>Mahir dalam baris perintah merupakan keahlian yang sering diabaikan atau masih dianggap misteri, tapi hal tersebut dapat meningkatkan fleksibilitas dan produktivitas sebagai seorang teknisi secara jelas. Halaman ini merupakan kumpulan catatan dan tips dalam menggunakan baris perintah sebagaimana yang kita ketahui sangat berguna ketika bekerja pada sistem Linux. Beberapa merupakan tips dasar, dan beberapa cukup spesifik, terkini, atau yang jarang digunakan. Halaman ini tidak panjang, tetapi jika anda dapat menggunakan dan mengingat semua perintah yang ada pada halaman ini, berarti anda memiliki pengetahuan yang cukup luas.</p>
+<p>Proyek ini merupakan hasil dari banyak <a href="AUTHORS.md">penulis dan penerjemah</a>.<br>Beberapa diantaranya <a href="http://www.quora.com/What-are-some-lesser-known-but-useful-Unix-commands" target="_blank" rel="noopener">pertama kali</a><br><a href="http://www.quora.com/What-are-the-most-useful-Swiss-army-knife-one-liners-on-Unix" target="_blank" rel="noopener">muncul</a><br>di <a href="http://www.quora.com/What-are-some-time-saving-tips-that-every-Linux-user-should-know" target="_blank" rel="noopener">Quora</a>,<br>namun kemudian dialihkan ke GitHub, dimana banyak orang-orang yang lebih berbakat dari penulis awal telah membuat banyak penyempurnaan.<br><a href="https://airtable.com/shrzMhx00YiIVAWJg" target="_blank" rel="noopener"><strong>Silakan ajukan pertanyaan</strong></a> jika anda memiliki pertanyaan seputar perintah baris. <a href="/CONTRIBUTING.md"><strong>Silakan berkontribusi</strong></a> jika anda melihat ada kesalahan atau memiliki suatu ide yang lebih baik!</p>
+<h2 id="Meta"><a href="#Meta" class="headerlink" title="Meta"></a>Meta</h2><p>Batasan masalah:</p>
+<ul>
+<li>Panduan ini ditujukan bagi pemula dan yang telah berpengalaman. Tujuan utamanya cukup <em>luas</em> (segala hal adalah penting), <em>spesifik</em> (memberikan contoh kongkrit dari kasus yang umum terjadi), dan <em>ringkas</em> (hindari hal yang tidak penting atau menyimpang yang dapat ditemukan). Setiap tip adalah penting dalam beberapa kondisi atau dapat menjadi pilihan alternatif.</li>
+<li>Ditulis untuk Linux, dengan pengecualian dari bagian “<a href="#os-x-only">Khusus OS X</a>“ and “<a href="#windows-only">Khusus Windows</a>“. Banyak yang menggunakan atau memasangnya dalam varian UNIX atau OS X lainnya (bahkan menggunakan Cygwin).</li>
+<li>Berfokus pada Bash interaktif, meskipun banyak tip yang dapat digunakan pada terminal lainnya dan skrip Bash secara umum.</li>
+<li>Mengandung perintah UNIX “standar” sebagaimana yang telah diketahui bahwa membutuhkan instalasi paket spesial – selama dirasa cukup penting untuk diikut sertakan.</li>
+</ul>
+<p>Catatan:</p>
+<ul>
+<li>Untuk menjaga tetap memungkinkan dalam satu halaman, materi tidak disertakan dengan referensi secara langsung. Anda cukup paham untuk mengetahui lebih detil mengenai penjelasan setiap perintah, misalnya menggunakan Google. Gunakan <code>apt-get</code>, <code>yum</code>, <code>dnf</code>, <code>pacman</code>, <code>pip</code> atau <code>brew</code> (seperlunya) untuk memasang program baru.</li>
+<li>Gunakan <a href="http://explainshell.com/" target="_blank" rel="noopener">Explainshell</a> untuk bantuan mengenai perintah, opsi, saluran, dan lain sebagainya.</li>
+</ul>
+<h2 id="Dasar-dasar"><a href="#Dasar-dasar" class="headerlink" title="Dasar-dasar"></a>Dasar-dasar</h2><ul>
+<li><p>Pelajari dasar Bash. Sebenarnya dengan mengetikkan <code>man bash</code> anda bisa mengetahui semuanya; sangat mudah untuk dilakukan dan cukup singkat. Sebagai alternatif terminal dapat menjadi menyenangkan, tapi Bash lebih baik dan selalu tersedia (hanya mempelajari <em>only</em> zsh, fish, etc., ketika menggunakan laptop pribadi anda, membatasi anda dalam banyak situasi, seperti menggunakan server yang sudah ada).</p>
+</li>
+<li><p>Pelajari setidaknya satu pengolah teks dengan baik. Secara ideal Vim (<code>vi</code>), yang mana merupakan pengolah teks berbasis terminal terbaik saat ini (meskipun anda menggunakan Emacs, sebuah IDE yang besar, atau pengolah teks modern yang unik sepanjang masa).</p>
+</li>
+<li><p>Ketahui cara membaca dokumentasi dengan <code>man</code> (sebagai informasi tambahan, <code>man man</code> menampilkan daftar bagian dalam bentuk nomor, misalnya 1 adalah perintah-perintah “reguler”, 5 adalah berkas-berkas atau aturan-aturan, dan 8 adalah untuk administrasi). Temukan halaman <code>man</code> dengan <code>apropos</code>. Ketahui bahwa beberapa perintah tidak dapat dijalankan secara langsung, kecuali bawaan dari Bash, dan anda dapat mencari bantuan mengenai hal tersebut dengan <code>help</code> dan <code>help -d</code>. Anda dapat mencari tahu apakah suatu perintah dapat dijalankan langsung, perintah bawaan atau sebuah alias dapat diketahui dengan <code>type perintah</code>.</p>
+</li>
+<li><p>Pelajari tentang pengalihan hasil keluaran dan masukan menggunakan <code>&gt;</code> dan <code>&lt;</code> dan saluran menggunakan <code>|</code>. Ketahui bahwa <code>&gt;</code> menimpa hasil keluaran dari sebuah berkas sedangkan <code>&gt;&gt;</code> menambahkan keluaran dibagian akhir dari berkas. Pelajari tentang <code>stdout</code> dan <code>stderr</code>.</p>
+</li>
+<li><p>Pelajari tentang penyebaran berkas dengan <code>*</code> (dan mungkin <code>?</code> dan <code>[</code>…<code>]</code>) dan tanda petik dan perbedaan antara petik dua <code>&quot;</code> dan petik sati <code>&#39;</code>. (Penjelasan lebih lanjut pada penyebaran variabel dibawah.)</p>
+</li>
+<li><p>Biasakan diri dengan pengelolaan tugas pada Bash: <code>&amp;</code>, <strong>ctrl-z</strong>, <strong>ctrl-c</strong>, <code>jobs</code>, <code>fg</code>, <code>bg</code>, <code>kill</code>, dan lain sebagainya.</p>
+</li>
+<li><p>Ketahui tentang <code>ssh</code>, dan dasar autentikasi tanpa kata kunci, melalui <code>ssh-agent</code>, <code>ssh-add</code>, dan lain sebagainya.</p>
+</li>
+<li><p>Dasar pengelolaan berkas: <code>ls</code> dan <code>ls -l</code> (pelajari juga maksud setiap kolom pada <code>ls -l</code>), <code>less</code>, <code>head</code>, <code>tail</code> dan <code>tail -f</code> (atau yang lebih baik, <code>less +F</code>), <code>ln</code> dan <code>ln -s</code> (pelajari perbedaan dan keuntungan menggunakan hard dan soft link), <code>chown</code>, <code>chmod</code>, <code>du</code> (untuk penjelasan singkat penggunaan disk: <code>du -hs *</code>). Untuk pengelolaan berkas sistem, <code>df</code>, <code>mount</code>, <code>fdisk</code>, <code>mkfs</code>, <code>lsblk</code>. Pelajari apa itu inode (<code>ls -i</code> atau <code>df -i</code>).</p>
+</li>
+<li><p>Dasar pengelolaan jaringan: <code>ip</code> atau <code>ifconfig</code>, <code>dig</code>.</p>
+</li>
+<li><p>Pelejari dan gunakan sistem pengelolaan kontrol versi, seperti <code>git</code>.</p>
+</li>
+<li><p>Ketahui regular expression (regex) dengan baik, dan beberapa flags untuk <code>grep</code>/<code>egrep</code>. Flag <code>-i</code>, <code>-o</code>, <code>-v</code>, <code>-A</code>, <code>-B</code>, dan <code>-C</code> bermanfaat untuk dipelajari.</p>
+</li>
+<li><p>Pelajari cara menggunakan <code>apt-get</code>, <code>yum</code>, <code>dnf</code> atau <code>pacman</code> (tergantung distro yang digunakan) untuk melakukan instalasi paket. Dan pastikan anda mempunyai <code>pip</code> untuk menginstall alat baris perintah berbasis Python (dibawah ini beberapa lebih mudah diinstall menggunakan <code>pip</code>).</p>
+</li>
+</ul>
+<h2 id="Penggunaan-sehari-hari"><a href="#Penggunaan-sehari-hari" class="headerlink" title="Penggunaan sehari-hari"></a>Penggunaan sehari-hari</h2><ul>
+<li><p>Dalam Bash, gunakan <strong>Tab</strong> untuk melengkapi secara otomatis suatu perintah atau daftar perintah yang tersedia dan <strong>ctrl-r</strong> untuk mencari riwayat perintah (setelah ditekan, ketikan kata kunci yang ingin dicari, tekan <strong>ctrl-r</strong> untuk berpindah antara perintah-perintah yang sesuai, tekan <strong>Enter</strong> untuk menjalankan perintah, atau menekan tanda panah kanan di keyboard).</p>
+</li>
+<li><p>Dalam Bash, gunakan <strong>ctrl-w</strong> untuk untuk menghapus kata terakhir, dan <strong>ctrl-u</strong> untuk menghapus semua kata mulai dari baris pertama. Gunakan <strong>alt-b</strong> dan <strong>alt-f</strong> untuk memindahkan kata, <strong>ctrl-a</strong> untuk memindahkan kursor kebaris paling depan, <strong>ctrl-e</strong> untuk memindahkan kursor kebaris paling akhir, <strong>ctrl-k</strong> untuk menghentikan bagian akhir dari baris, <strong>ctrl-l</strong> untuk membersihkan layar tampilan. Lihat <code>man readline</code> untuk menampilkan semua kombinasi tombol yang ada dalam Bash. Ada cukup bnyak kombinasi. Contohnya <strong>alt-.</strong> berpindah melalui perintah sebelumnya, dan <strong>alt-*</strong> melebarkan glob.  </p>
+</li>
+<li><p>Sebagai alternatif, jika anda lebih sendang menggunakan gaya kombinasi <code>vi</code>, gunakan <code>set -o vi</code> (dan <code>set -o emacs</code> untuk mengembalikan kepengaturan awal).</p>
+</li>
+<li><p>Untuk mengelola perintah yang panjang, setelah melakukan pengaturan pengolah teks (sebagai contoh <code>export EDITOR=vim</code>), menekan kombinasi <strong>ctrl-x</strong> <strong>ctrl-e</strong> akan membuka perintah saat ini pada pengolah teks untuk melakukan pengelolaah secara langsung. Atau dalam gaya <code>vi</code>, <strong>escape-v</strong>.</p>
+</li>
+<li><p>Untuk melihat perintah terakhir yang digunakan, <code>history</code>. Tambahkan <code>!n</code> dibagian akhir (dimana <code>n</code> merupakan jumlah perintah) untuk dijalankan kembali. Terdapat beberapa penyingkatan yang dapat digunakan, diantaranya yang paling sering digunakan <code>!$</code> untuk parameter terakhir dan <code>!!</code> untuk perintah terakhir (baca “HISTORY EXPANSION” pada halaman manual <code>man</code>). Bagaimanapun, sering digantikan dengan kombinasi <strong>ctrl-r</strong> dan <strong>alt-.</strong>.</p>
+</li>
+<li><p>Pindah ke direktori home dengan <code>cd</code>. Akses berkas yang berada dibawah direktori home dengan awalan <code>~</code> (misalnya <code>~/.bashrc</code>). Dalam skrip <code>sh</code> direktori home dinyatakan dalam <code>$HOME</code>.</p>
+</li>
+<li><p>Untuk kembali ke direktori sebelumnya: <code>cd -</code>.</p>
+</li>
+<li><p>Jika dalam menulis perintah anda berubah fikiran, tekan <strong>alt-#</strong> untuk menambahkan <code>#</code> pada awal perintah untuk menjadikannya sebuah komentar (atau <strong>ctrl-a</strong>, <strong>#</strong>, <strong>enter</strong>). Selanjutnya anda dapat mengakses perintah tersebuh dikemudian dengan menggunakan <code>history</code>.</p>
+</li>
+<li><p>Gunakan <code>xargs</code> (atau <code>parallel</code>). Sangat bagus. Anda dapat mengontrol berapa banyak item yang dapat dijalankan per-baris (<code>-L</code>) atau menjalankannya secara bersamaan (<code>-P</code>). Jika anda tidak yakin hal tersebut akan berjalan dengan baik, gunakan <code>xargs echo</code> terlebih dahulu. Atau <code>I{}</code> juga sangat bermanfaat. Contohnya:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">'*.py'</span> | xargs grep some_function</span><br><span class="line">cat hosts | xargs -I&#123;&#125; ssh root@&#123;&#125; hostname</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>pstree -p</code> dapat membantu menampilkan daftar proses yang sedang berjalan.</p>
+</li>
+<li><p>Gunakan <code>pgrep</code> dan <code>pkill</code> untuk mencari proses sinyal berdasarkan nama (<code>-f</code> juga cukup membantu).</p>
+</li>
+<li><p>Pelajari jenis sinyal yang dapat dikirimkan ke proses. Contoh, untuk menunda sebuah proses, gunakan <code>kill -STOP [pid]</code>. Untuk daftar semua sinyal, lihat <code>man 7 signal</code>.</p>
+</li>
+<li><p>Gunakan <code>nohup</code> atau <code>disown</code> untuk membuat proses tetap berjalan selamanya.</p>
+</li>
+<li><p>Lihat kemana sebuah proses terhubung (listening) melalui <code>netstat -lntp</code> atau <code>ss -plat</code> (untuk TCP, gunakan <code>-u</code> untuk UDP).</p>
+</li>
+<li><p>Lihat juga <code>lsoft</code> untuk membuka socket dan berkas.</p>
+</li>
+<li><p>Lihat <code>uptime</code> atau <code>w</code> untuk mengetahui berapa sistem sudah berjalan (aktif).</p>
+</li>
+<li><p>Gunakan <code>alias</code> untuk membuat jalan pintas untuk perintah-perintah yang sering digunakan. Misalnya, <code>alias ll=&#39;ls -latr&#39;</code> akan menghasilkan alias <code>ll</code>.</p>
+</li>
+<li><p>Menyimpan alias, pengaturan shell, dan fungsi yang sering digunakan di <code>~/.bashrc</code>, dan <a href="http://superuser.com/a/183980/7106" target="_blank" rel="noopener">atur shell untuk dibaca ketika login</a>. Hal tersebut akan membuat pengaturan dapat berjalan disemua sesi.</p>
+</li>
+<li><p>Letakkan pengaturan dari variabel sebagai perintah yang akan dijalankan ketika login di <code>~/.bash_profile</code>. Pisahkan konfigurasi yang dibutuhkan untuk menjalankan grafik login dan tugas-tugas <code>cron</code>.</p>
+</li>
+<li><p>Singkronkan berkas konfigurasi (seperti <code>.bashrc</code> dan <code>.bash_profile</code>) pada banyak komputer dengan Git.</p>
+</li>
+<li><p>Pahami bahwa dibutuhkan perhatian lebih ketika variabel dan nama berkas mengandung spasi. Batasi variabel Bash dengan tanda petik, misalnya <code>&quot;$FOO&quot;</code>. Sebaiknya gunakan opsi <code>-0</code> atau <code>-print0</code> untuk membuat karakter null dalam membatasi nama berkas, misalnya <code>locate -0 pattern | xargs -0 ls -al</code> atau <code>find / -print0 -type d | xargs -0 ls -al</code>.  Untuk membuat perulangan nama berkas yang mengandung spasi dalam <code>for</code>, atur IFS sebagai baris baru dengan <code>IFS=$&#39;\n&#39;</code> .</p>
+</li>
+<li><p>Dalam skrip Bash, gunakan <code>set -x</code> (atau lainnya <code>set -v</code>, yang mana akan menamilkan raw masukan dalam log, termasuk variabel dan komentar) untuk keperluan debugging. Gunakan mode <code>strict</code> kecuali ada alasan lebih baik untuk tidak menggunakan <code>set -e</code> untuk membatalkan perintah ketika terjadi kesalahan (kode exit tidak 0). Gunakan <code>set -u</code> untuk mendeteksi variabel yang belum ditentukan tapi sudah digunakan. Pertimbangkan <code>set -o pipefail</code> juga, untuk kesalahan didalam saluran. Untuk skrip terkait, gunakan <code>trap</code> pada EXIT atau ERR. Disarankan untuk memulai dari skrip berikut, dimana akan mendeteksi dan membatalkan perintah ketika terjadi kesalahan tertentu kemudian menampilkannya dalam pesan:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> -euo pipefail</span><br><span class="line"><span class="built_in">trap</span> <span class="string">"echo 'Kesalahan: Skrip gagal: harap periksa kembali perintah yang anda masukkan'"</span> ERR</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Dalam skrip Bash, bagian dalam shell (ditulis didalam tanda kurung) merupakan cara terbaik untuk menggabungkan perintah. Sebuah contoh yang sering digunakan adalah berpindah ke direktori kerja yang lain, contohnya:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># melakukan sesuatu dalam direktori kerja saat ini</span></span><br><span class="line">(<span class="built_in">cd</span> /direktori/kerja/lainnya &amp;&amp; suatu-perintah)</span><br><span class="line"><span class="comment"># melanjutkan pekerjaan dalam direktori yang sebenarnya</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Dalam Bash, ada banyak jenis dari pengembangan variabel. Memeriksa ketersediaan variabel: <code>$(nama_variabel:?pesan kesalahan)</code>. Sebagai contoh, jika skrip membutuhkan sebuah parameter, cukup menulis <code>berkas_masukan=$(1:?penggunaan: $0 berkas_masukan)</code>. Contoh dalam aritmatika: <code>i=$(( (i + 1) % 5 ))</code>. Urutan: <code>{1..10}</code>. Pemangkasan string: <code>${var%akhiran}</code> dan <code>${var#awalan}</code>. Sebagai contoh jika <code>var=foo.pdf</code>, maka <code>echo ${var%.pdf}.txt</code> akan menghasilkan <code>foo.txt</code>.</p>
+</li>
+<li><p>Kurung kurawal <code>{</code>…<code>}</code> dapat mengurangi kesalahan dama mengetik teks yang sama dan membuat kombinasi dari banyak item secara otomatis. Ini sangat membantu misalnya dalam perintah <code>mv foo.{txt,pdf} suatu-direktori</code> (memindahkan kedua berkas sekaligus), <code>cp suatuberkas{,.bak}</code> (memiliki makna sama dengan <code>cp suatuberkas suatuberkas.bak</code>) atau <code>mkdir -p test-{a,b,c}/subtest-{1,2,3}</code> (memiliki makna membuat semua kemungkinan kombinasi untuk struktur direktori).</p>
+</li>
+<li><p>Keluaran dari perintah dapat diperlakukan sebagai sebuah berkas dengan <code>&lt;(suatu perintah)</code>. Misalnya, membandingkan <code>/etc/hosts</code> yang ada pada lokal dengan server:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff /etc/hosts &lt;(ssh suatuserver cat /etc/hosts)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Ketika menulis skrip disarankan untuk membatasi semua kode dalam kurung kurawal. Jika penutuh kurung kurawal tidak ditemukan, skrip tidak dapat dijalankan karena terjadi kesalahan. Hal ini biasanya terjadi ketika mengunduh skrip dari web, kemungkinan beberapa bagian dari skrip yang telah diunduh sengaja ditulis untuk menghindari eksekusi:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">      <span class="comment"># Kode disini</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Ketahui tentang “here documents” dalam Bash dengan <code>cat &lt;&lt;EOF...</code>.</p>
+</li>
+<li><p>Dalam Bash, arahkan keluaran standar dan kesalahan melalui: <code>suatu-perintah &gt; berkaslog 2&gt;&amp;1</code> atau <code>suatu-perintah &amp;&gt;berkaslog</code>. Biasanya, untuk memastikan suatu perintah tidak meninggalkan berkas tetap terbuka setelah menerima masukan, coba pada terminal anda saat ini, merupakan hal baik untuk menambahkan <code>&lt;/dev/null</code>.</p>
+</li>
+<li><p>Gunakan <code>man ascii</code> untuk melihan tabel ASCII, dengan nilai hex dan decimal. Untuk informasi umum mengenai unicode, <code>man unicode</code>, <code>man utf-8</code>, dan <code>man latin1</code> juga sangat berguna.</p>
+</li>
+<li><p>Gunakan <code>screen</code> atau <a href="https://tmux.github.io/" target="_blank" rel="noopener"><code>tmux</code></a> untuk tampilan multi layar, terutama sangat bermanfaat dalam sesi ssh, melepas dan menyambung kembali sebuah sesi. <code>byobu</code></p>
+</li>
+<li><p>Use <code>screen</code> or <a href="https://tmux.github.io/" target="_blank" rel="noopener"><code>tmux</code></a> to multiplex the screen, especially useful on remote ssh sessions and to detach and re-attach to a session. <code>byobu</code> can enhance screen or tmux providing more information and easier management. A more minimal alternative for session persistence only is <a href="https://github.com/bogner/dtach" target="_blank" rel="noopener"><code>dtach</code></a>.</p>
+</li>
+<li><p>Dalam ssh, mengetahui bagaimana cara menggunaakn saluran (port tunnel) dengan <code>-L</code> atau <code>-D</code> (dan terkadang <code>-R</code>) juga berguna. Misalnya untuk mengakses situs web dari kendali server jarak jauh.</p>
+</li>
+<li><p>Akan sangat bermanfaat untuk melakukan optimisasi pada konfigurasi ssh; misalnya, <code>~/.ssh/config</code> mengandung pengaturan untuk menghindari putusnya koneksi antar jaringan, menggunakan kompresi (bermanfaat bagi yang memiliki bandwidth rendah), dan terhubung dengan banyak saluran pada suatu server dengan kontrol lokal:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TCPKeepAlive=yes</span><br><span class="line">ServerAliveInterval=15</span><br><span class="line">ServerAliveCountMax=6</span><br><span class="line">Compression=yes</span><br><span class="line">ControlMaster auto</span><br><span class="line">ControlPath /tmp/%r@%h:%p</span><br><span class="line">ControlPersist yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Beberapa opsi lain untuk SSH terkait sensitifitas keamanan dan sebaiknya diaktifkan dengan hati-hati, misalnya pada subnet atau host atau pada jaringan yang terpercaya: <code>StrictHostKeyChecking=no</code>, <code>ForwardAgent=yes</code></p>
+</li>
+<li><p>Pertimbangkan <a href="https://mosh.mit.edu/" target="_blank" rel="noopener"><code>mosh</code></a> sebagai alternatif untuk SSH yang mana menggunakan UDP, dapat menjaga terputusnya koneksi dan lebih nyaman untuk digunakan (perlu konfigurasi disisi server).</p>
+</li>
+<li><p>Untuk mendapatkan hak akses pada sebuah berkas, yang mana berguna untuk konfigurasi sistem tapi tidak tersedia pada <code>ls</code>, gunakan perintah perikut</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">stat</span> -c <span class="string">'%A %a %n'</span> /etc/timezone</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Untuk memilih nilai keluaran dari perintah lain secara interaktif, gunakan <a href="https://github.com/mooz/percol" target="_blank" rel="noopener"><code>percol</code></a> or <a href="https://github.com/junegunn/fzf" target="_blank" rel="noopener"><code>fzf</code></a>.</p>
+</li>
+<li><p>For interaction with files based on the output of another command (like <code>git</code>), use <code>fpp</code> (<a href="https://github.com/facebook/PathPicker" target="_blank" rel="noopener">PathPicker</a>).</p>
+</li>
+<li><p>For a simple web server for all files in the current directory (and subdirs), available to anyone on your network, use:<br><code>python -m SimpleHTTPServer 7777</code> (for port 7777 and Python 2) and <code>python -m http.server 7777</code> (for port 7777 and Python 3).</p>
+</li>
+<li><p>For running a command with privileges, use <code>sudo</code> (for root) or <code>sudo -u</code> (for another user). Use <code>su</code> or <code>sudo bash</code> to actually run a shell as that user. Use <code>su -</code> to simulate a fresh login as root or another user.</p>
+</li>
+<li><p>Untuk berganti ke pengguna Shell lain, gunakan <code>su username</code> atau <code>su - username</code>. Sertakan <code>-</code> untuk mendapatkan lingkungan jika pengguna telah login. Hindari menggunakan username menjadi root. Anda akan dimintai password <em>untuk pengguna yang ingin diganti</em>.</p>
+</li>
+<li><p>Ketahui <a href="https://wiki.debian.org/CommonErrorMessages/ArgumentListTooLong" target="_blank" rel="noopener">batasan 128k</a> pada sebuah perintah. Kesalahan “Argument list too long” sering terjadi ketika karakter (wildcard) mewakili berkas yang sangat banyak. (Saat ini terjadi dapat menggunakan <code>find</code> dan <code>xargs</code> sebagai bantuan.)</p>
+</li>
+<li><p>Untuk sebuah perhitungan dasar (secara umum akses Python), gunakan interpreter <code>python</code>. Contohnya,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 2+3</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Mengolah-berkas-dan-data"><a href="#Mengolah-berkas-dan-data" class="headerlink" title="Mengolah berkas dan data"></a>Mengolah berkas dan data</h2><ul>
+<li><p>Untuk menemukan berkas berdasarkan nama dalam direktori saat ini, <code>find . -iname &#39;*sesuatu*&#39;</code> (atau yang mirip). Untuk mencari berkas dibanyak tempat berdasarkan nama, gunakan <code>locate sesuatu</code> (tapi ingat <code>updatedb</code> mungkin belum menyimpan berkas terbaru yang dibuat).</p>
+</li>
+<li><p>Untuk pencarian umum berdasarkan isi berkas (lebih dalam dibandingkan dengan <code>grep -r</code>), gunakan <a href="https://github.com/ggreer/the_silver_searcher" target="_blank" rel="noopener"><code>ag</code></a>.</p>
+</li>
+<li><p>Untuk mengkonversi HTML menjadi teks: <code>lynx -dump -stdin</code></p>
+</li>
+<li><p>Untuk Markdown, HTML, dan semua jenis konversi dokumen, coba <a href="http://pandoc.org/" target="_blank" rel="noopener"><code>pandoc</code></a>.</p>
+</li>
+<li><p>Jika anda mengelola XML, <code>xmlstarlet</code> adalah pilihan yang paling tua namun terbaik.</p>
+</li>
+<li><p>Untuk JSON, gunakan <a href="http://stedolan.github.io/jq/" target="_blank" rel="noopener"><code>jq</code></a>.</p>
+</li>
+<li><p>Untuk YAML, gunakan <a href="https://github.com/0k/shyaml" target="_blank" rel="noopener"><code>shyaml</code></a>.</p>
+</li>
+<li><p>Untuk Excel atau berkas CSV, <a href="https://github.com/onyxfish/csvkit" target="_blank" rel="noopener">csvkit</a> menyediakan <code>in2csv</code>, <code>csvcut</code>, <code>csvjoin</code>, <code>csvgrep</code>, dan lain sebagainya.</p>
+</li>
+<li><p>Untuk Amazon S3, <a href="https://github.com/s3tools/s3cmd" target="_blank" rel="noopener"><code>s3cmd</code></a> lebih nyaman digunakan dan <a href="https://github.com/bloomreach/s4cmd" target="_blank" rel="noopener"><code>s4cmd</code></a> lebih cepat. Amazon <a href="https://github.com/aws/aws-cli" target="_blank" rel="noopener"><code>aws</code></a> dan yang telah dikembangkan <a href="https://github.com/donnemartin/saws" target="_blank" rel="noopener"><code>saws</code></a> tetap penting untuk pekerjaan yang berhubungan dengan AWS lainnya.</p>
+</li>
+<li><p>Ketahui tentang <code>sort</code> dan <code>uniq</code>, termasuk opsi <code>-u</code> dan <code>-d</code> – lihat Perintah satu baris dibawah. Lihat juga <code>comm</code>.</p>
+</li>
+<li><p>Ketahui tentang <code>cut</code>, <code>paste</code>, dan <code>join</code> dalam memanipulasi teks pada berkas. Banyak orang menggunakan <code>cut</code> tapi melupakan tentang <code>join</code>.</p>
+</li>
+<li><p>Ketahui tentang <code>wc</code> untuk menghitung jumlah baris (<code>-l</code>), karakter (<code>-m</code>), kata (<code>-w</code>) dan byte (<code>-c</code>).</p>
+</li>
+<li><p>Ketahui tentang <code>tee</code> untuk menyalin dari stdin sebuah berkas ke stdout, seperti dalam <code>ls -al | tee file.txt</code>.</p>
+</li>
+<li><p>Untuk kalkulasi yang cukup kompleks, termasuk pengelompokan, konversi nilai, dan statistik, pertimbangkan untuk menggunakan <a href="https://www.gnu.org/software/datamash/" target="_blank" rel="noopener"><code>datamash</code></a>.</p>
+</li>
+<li><p>Ketahui bahwa locale cukup berdampak pada banyak perintah, termasuk pengurutan (pemeriksaan) dan dan kinerja. Kebanyakan distribusi Linux akan menggunakan <code>LANG</code> atau variabel locale lainnya untuk melakukan pengaturan bahasa seperti ID Indonesia. Tapi waspada karena pengurutan akan berubah jika locale juga telah dirubah. Dan ketahui aktifitas i18n dapat membuat banyak perintah <em>seringkali</em> menjadi lambat. Dalam kondisi tertentu (seperti beberapa perintah operasi dibawah) anda dapat menghindari i18n dan menggunakan pengurutan tradisional, gunakan <code>export LC_ALL=C</code>.</p>
+</li>
+<li><p>Anda dapat menentukan perintah tertentu dengan memberikan awalan saat pemanggilan dengan variabel pengaturan, seperti <code>TZ=Pacific/Fiji date</code>.</p>
+</li>
+<li><p>Ketahui mengenai dasar <code>awk</code> dan <code>sed</code> untuk manipulasi data. Sebagai contoh, menjumlahkan semua nomor yang ada pada kolom ketiga dari sebuah berkas: <code>awk &#39;{ x += $3 } END { print x }&#39;</code>. Ini memungkinkan komputasi 3x lebih cepat dan 3x lebih singkat dibandingkan dengan persamaan Python.</p>
+</li>
+<li><p>Untuk mengganti semua string yang cocok, dalam satu atau lebih dari satu berkas:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">perl -pi.bak -e <span class="string">'s/string-lama/string-baru/g'</span> my-files-*.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Untuk mengganti nama banyak berkas atau mencari dan/atau mengganti dalam berkas, coba <a href="https://github.com/jlevy/repren" target="_blank" rel="noopener"><code>repren</code></a>. (Dalam beberapa kasus perintah <code>rename</code> memungkinkan untuk mengganti banyak nama sekaligus, namun perlu berhati-hati karena fungsionalitas mungkin tidak akan sama pada distribusi Linux lainnya.)</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mengganti nama berkas, direktori, dan isi berkas secara penuh dari foo --&gt; bar:</span></span><br><span class="line">repren --full --preserve-case --from foo --to bar .</span><br><span class="line"><span class="comment"># Mengembalikan backup berkas whatever.bak -&gt; whatever:</span></span><br><span class="line">repren --renames --from <span class="string">'(.*)\.bak'</span> --to <span class="string">'\1'</span> *.bak</span><br><span class="line"><span class="comment"># Sama seperti diatas, menggunakan rename, jika ada yang cocok:</span></span><br><span class="line">rename <span class="string">'s/\.bak$//'</span> *.bak</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Sesuai dengan yang ada pada halaman manual, <code>rsync</code>  adalah perintah untuk menyalin berkas yang cukup cepat dan memiliki banyak fitur. Mampu melakukan singkronisasi antar host yang mana sangat berguna untuk host lokal. Jika keamanan tidak diutamakan, gunakan <code>rsync</code> daripada <code>scp</code> untuk pemulihan tanpa harus mengulang dari awal. Perintah tersebut merupakan <a href="https://web.archive.org/web/20130929001850/http://linuxnote.net/jianingy/en/linux/a-fast-way-to-remove-huge-number-of-files.html" target="_blank" rel="noopener">cara tercepat</a> untuk menghapus banyak berkas sekaligus:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir empty &amp;&amp; rsync -r --delete empty/ some-dir &amp;&amp; rmdir some-dir</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Gunakan <code>shuf</code> untuk mengacak atau memilih baris secara acak dalam sebuah berkas.</p>
+</li>
+<li><p>Ketahui perintah <code>sort</code>. Untuk angka, funakan opsi <code>-n</code>, atau <code>-h</code> untuk menampilkan angka yang mudah dibaca manusia (contoh <code>du -h</code>). Ketahui bagaimana cara kerja kunci (<code>-t</code> dan <code>-k</code>).  Terkadang membutuhkan <code>k1,1</code> untuk mengurutkan kolom pertama saja; <code>k1</code> berarti mengurutkan semua barus.  Pengurutan yang stabil (<code>sort -s</code>) juga cukup berguna. FContoh, untuk mengurutkan yang pertama berdasarkan kolom 2, yang kedua berdasarkan kolom 1, akan menjadi <code>soft -k1,1 | sort -s -k2m2</code>.  </p>
+</li>
+<li><p>Jika perlu untuk membuat tab pada terminal dalam Bash (misalnya argumen <code>-t</code> untuk mengurutkan), tekan <strong>ctrl-v</strong> <strong>[Tab]</strong> atau dengan menulis <code>$&#39;\t&#39;</code> (menulis langsung lebih baik dari copy/paste).</p>
+</li>
+<li><p>Alat yang umum digunakan untuk menambal sumber kode adalah <code>diff</code> dan <code>patch</code>. Lihat juga <code>diffstat</code> untuk hasil berupa statistik dari <code>diff</code> dan <code>sdiff</code>. Ingat bahwa <code>diff -r</code> berlaku pada semua direktori. Gunakan <code>diff -r tree1 tree2 | diffstat</code> untuk ringkasan perubahan. Gunakan <code>vimdiff</code> untuk membandingkan dan memperbarui berkas.</p>
+</li>
+<li><p>Untuk berkas binari, gunakan <code>hd</code>, <code>hexdump</code> atau <code>xxd</code> untuk menampilkan kode hex yang sederhana dan <code>bvi</code> atau <code>blew</code> untuk memperbarui berkas biner.</p>
+</li>
+<li><p>Alat lainnya untuk berkas biner, <code>strings</code> (dikombinasikan dengan <code>grep</code>, dan lainnya) memungkinkan pencarian teks berdasarkan bit-bit.</p>
+</li>
+<li><p>Untuk membandingkan berkas biner (kompresi delta), gunakan <code>xdelta3</code>.</p>
+</li>
+<li><p>Untuk mengkonversi sandi penulisan teks, coba <code>iconv</code>. Atau <code>uconv</code> untuk penggunaan lebih lanjut; telah mendukung hal yang berkaitan dengan Unicode. Sebagai contoh, perintah berikut membuat tulisan kecil dan menghapus semua aksen (dengan mengembangkan atau menghapusnya).</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uconv -f utf-8 -t utf-8 -x <span class="string">'::Any-Lower; ::Any-NFD; [:Nonspacing Mark:] &gt;; ::Any-NFC; '</span> &lt; input.txt &gt; output.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Untuk memecah berkas menjadi beberapa bagian, lihat <code>split</code> (memisahkan berdasarkan ukuran) dan <code>csplit</code> (memisahkan berdasarkan pola).</p>
+</li>
+<li><p>Untuk memanipulasi tanggal dan waktu, gunakan <code>dateadd</code>, <code>datediff</code>, <code>strptime</code> etc. dari <a href="http://www.fresse.org/dateutils/" target="_blank" rel="noopener"><code>dateutils</code></a>.</p>
+</li>
+<li><p>Gunakan <code>zless</code>, <code>zmore</code>, <code>zcat</code>, dan <code>zgrep</code> untuk digunakan pada berkas yang terkompres.</p>
+</li>
+<li><p>Atribut dari sebuah berkas dapat diset melalui <code>chattr</code> dan disediakan alternatif untuk level terendah pada hak akses berkas. Sebagai contoh, untuk melindungi ketidak sengajaan pada penghapusan berkas gunakan flag kebal: <code>sudo chattr +i /direktori/berkas/penting</code></p>
+</li>
+<li><p>Gunakan <code>getfacl</code> dan <code>setfacl</code> untuk menyimpan dan mengembalikan hak akses pada suatu berkas. Contohnya:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">getfacl -R /suatu/path &gt; hakakses.txt</span><br><span class="line">setfacl --restore=hakakses.txt</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Analisa-sistem"><a href="#Analisa-sistem" class="headerlink" title="Analisa sistem"></a>Analisa sistem</h2><ul>
+<li><p>Untuk analisa web, <code>curl</code> dan <code>curl -I</code> cukup berguna, atau yang sama lainnya seperti <code>wget</code>, atau yang lebih modern <a href="https://github.com/jkbrzt/httpie" target="_blank" rel="noopener"><code>httpie</code></a>.</p>
+</li>
+<li><p>Untuk mengetahui status CPU/penyimpanan, perintah klasik <code>top</code> (lebih baik lagi <code>htop</code>), <code>iostat</code>, dan <code>iotop</code>. Gunakan <code>iostat -mxz 15</code> untuk melihat detil CPU tiap bagian (partition) penyimpanan dan pengetahuan tentang kinerja.</p>
+</li>
+<li><p>Untuk detail koneksi jaringan, gunakan <code>netstat</code> dan <code>ss</code>.</p>
+</li>
+<li><p>Untuk melihat sekilas yang terjadi pada sistem, <code>dstat</code> cukup berguna. Untuk detil secara menyeluruh, gunakan <a href="https://github.com/nicolargo/glances" target="_blank" rel="noopener"><code>glances</code></a>.</p>
+</li>
+<li><p>Untuk status memory, jalankan dan perhatikan keluaran dari <code>free</code> dan <code>vmstat</code>. Dalam kondisi tertentu, hati-hati terhadap “cached” yang dihasilkann oleh kernel Linux, jadi perhatikan sebaik mungkin keluaran dari <code>free</code>.</p>
+</li>
+<li><p>Analisa sistem Java sedikit berbeda, tapi ada trik sederhana untuk JVM dari Oracle dan yang lainnya yakni dapat dijalankan perintah <code>kill -3 &lt;pid&gt;</code> dan penelusuran (full stack trace) dan beberapa ringkasan utama (termasuk informasi pembangkitan sampah sistem, informasi yang sangat berguna) akan dikeluarkan melalui stderr/logs. JDK seperti <code>jps</code>, <code>jstat</code>, jstack<code>,</code>jmap` cukup berguna. <a href="https://github.com/aragozin/jvm-tools" target="_blank" rel="noopener">Perlengkapan SJK</a> untuk penggunaan lebih lanjut.</p>
+</li>
+<li><p>Gunakan <a href="http://www.bitwizard.nl/mtr/" target="_blank" rel="noopener"><code>mtr</code></a> sebagai pilihan terbaik <code>traceroute</code>, untuk menelusuri masalah jaringan.</p>
+</li>
+<li><p>Untuk mengungkapkan kenapa penyimpanan penuh, perintah <a href="https://dev.yorhel.nl/ncdu" target="_blank" rel="noopener"><code>ncdu</code></a> lebih menghemat waktu dibangdingkan <code>du -sh *</code>.</p>
+</li>
+<li><p>Untuk mencari socket atau process yang sedang menggunakan bandwidth, coba <a href="http://www.ex-parrot.com/~pdw/iftop/" target="_blank" rel="noopener"><code>iftop</code></a> atau <a href="https://github.com/raboof/nethogs" target="_blank" rel="noopener"><code>nethogs</code></a>.</p>
+</li>
+<li><p>Perintah <code>ab</code> (paket dari Apache) sangat berguna untuk melihat kinerja dari server web. Untuk test lebih lanjut, gunakan <code>siege</code>.</p>
+</li>
+<li><p>Untuk analisa jaringan yang lebih serius, <a href="https://wireshark.org/" target="_blank" rel="noopener"><code>wireshark</code></a>, <a href="https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html" target="_blank" rel="noopener"><code>tshark</code></a>, atau <a href="http://ngrep.sourceforge.net/" target="_blank" rel="noopener"><code>ngrep</code></a>.</p>
+</li>
+<li><p>Ketahui tentang <code>strace</code> dan <code>ltrace</code>. Perintah tersebut membantu ketika sebuah program gagal, hang, atau crash secara tiba-tiba, atau jika ingin mengetahui kinerja aplikasi secara umum. Catatan gunakan opsi profiling (<code>-c</code>), dan kemampuan untuk menertakan proses yang sedang berjalan (<code>-p</code>).</p>
+</li>
+<li><p>Ketahui tentang <code>ldd</code> untuk memeriksa pustaka berbagi dan sebagainya.</p>
+</li>
+<li><p>Ketahui bagaimana cara terhubung dengan proses yang sedang berjalan dengan <code>gdb</code> dan periksa alur stack-nya.</p>
+</li>
+<li><p>Gunakan <code>/proc</code> untuk melakukan analisis permasalahan secara live. Contohnya: <code>/proc/cpuinfo</code>, <code>/proc/meminfo</code>, <code>/proc/cmdline</code>, <code>/proc/xxx/cwd</code>, <code>/proc/xxx/exe</code>, <code>/proc/xxx/fd/</code>, <code>/proc/xxx/smaps</code> (dimana <code>xxx</code> adalah ID proses id atau pid).</p>
+</li>
+<li><p>Untuk mengetahui kesalahan yang terjadi pada proses analisa sebelumnya, gunakan <a href="http://sebastien.godard.pagesperso-orange.fr/" target="_blank" rel="noopener"><code>sar</code></a>. Perintah tersebut dapat menampilkan riwayat statistik pada CPU, memory, jaringan, dan lain sebagainya.</p>
+</li>
+<li><p>Untuk analisa kinerja sistem lebih mendalam, periksa <code>stap</code> (<a href="https://sourceware.org/systemtap/wiki" target="_blank" rel="noopener">SystemTap</a>), <a href="https://en.wikipedia.org/wiki/Perf_(Linux" target="_blank" rel="noopener"><code>perf</code></a>), dan <a href="https://github.com/draios/sysdig" target="_blank" rel="noopener"><code>sysdig</code></a>.</p>
+</li>
+<li><p>Periksa Sistem Operasi yang digunakan dengan <code>uname</code> atau <code>uname -a</code> (Unix/kernel pada umumnya) atau <code>lsb_release -a</code> (distro linux).</p>
+</li>
+<li><p>Gunakan <code>dmesg</code> ketika terjadi sesuatu yang tidak disangka (mungkin masalah perangkat kerasa atau driver).</p>
+</li>
+<li><p>Jika anda menghapus sebuah berkas dan tidak dapat meningkatkan kapasitas media penyimpanan sebagaimana hasil pengecekan <code>du</code>, periksa kemungkinan berkas tersebut sedang digunakan oleh suatu proses:<br><code>lsof | grep deleted | grep &quot;berkas-yang-sangat-besar&quot;</code></p>
+</li>
+</ul>
+<h2 id="Perintah-satu-baris"><a href="#Perintah-satu-baris" class="headerlink" title="Perintah satu baris"></a>Perintah satu baris</h2><p>Beberapa contoh untuk menggabungkan perintah sekaligus:</p>
+<ul>
+<li><p>Terkadang cukup membantu ketika ingin mencari kesamaan, kesatuan, dan perbedaan dari beberapa berkas melalui <code>sort</code>/<code>uniq</code>. Misalkan <code>a</code> dan <code>b</code> adalah berkas yang berbeda. Perintah ini cukup cepat, dan dapat bekerja pada berkas dengan ukuran sampai gigabyte. (Pengurutan tidak dibatasi oleh memory, tapi diperlukan opsi <code>-T</code> jika <code>/tmp</code> berada dalam partisi root yang kecil.) Lihat juga catatan tentang <code>LC_ALL</code> diatas dan opsi yang terdapat pada <code>sort</code> (penjelasan lebih jelas dibawah berikut).</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat a b | sort | uniq &gt; c   <span class="comment"># c berisi kesatuan antara a dan b</span></span><br><span class="line">cat a b | sort | uniq -d &gt; c   <span class="comment"># c berisi persamaan antara a dan b</span></span><br><span class="line">cat a b b | sort | uniq -u &gt; c   <span class="comment"># c berisi perbedaan antara a dan b</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Gunakan <code>grep . *</code> untuk menguji isi dari semua berkas dalam sebuah direktori (hasil tiap berisnya berkaitan dengan nama berkas), atau <code>head -180 *</code> (setiap berkas memiliki informasi kepala). Hal ini sangat bermanfaat untuk direktori yang berisi berkas konfigurasi seperti <code>/sys</code>, <code>/proc</code>, <code>/etc</code>.</p>
+</li>
+<li><p>Untuk menjumlahkan semua nomor pada kolom ketiga dari sebuah berkas (memungkinkan proses 3x lebih cepat dan skrip 3x lebih pendek dari Python):</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123; x += $3 &#125; END &#123; print x &#125;'</span> suatuberkas</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Untuk melihat ukuran atau tanggal berkas dalam bentuk struktur pohon, mirip dengan rekursif <code>ls -l</code> namun lebih mudah untuk dibaca dari <code>ls -lR</code>:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -<span class="built_in">type</span> f -ls</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Ketika terdapat sebuah berkas teks seperti log web server, dan nilai tertentu muncul pada beberapa baris, misalnya parameter <code>acct_id</code> yang terdapat pada URL. Jika ingin mengetahui berapa banyak akses <code>acct_id</code>:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat access.log | egrep -o <span class="string">'acct_id=[0-9]+'</span> | cut -d= -f2 | sort | uniq -c | sort -rn</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Untuk memantau perubahan secara terus menerus, gunakan <code>watch</code>, misalnya perubahan berkas pada sebuah direktori, gunakan <code>watch -d -n 2 &#39;ls -rtlh | tail</code> atau pada pengaturan jaringan wifi ketika melakukan perbaikan dengan <code>watch -d -n 2 ifconfig</code>.</p>
+</li>
+<li><p>Jalankan fungsi berikut untuk mendapatkan sesuatu yang acak dari dokumen ini (mengolah Markdown dan mengeluarkan sebuah item):</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">taocl</span></span>() &#123;</span><br><span class="line">  curl -s https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README.md |</span><br><span class="line">    pandoc -f markdown -t html |</span><br><span class="line">    xmlstarlet fo --html --dropdtd |</span><br><span class="line">    xmlstarlet sel -t -v <span class="string">"(html/body/ul/li[count(p)&gt;0])[<span class="variable">$RANDOM</span> mod last()+1]"</span> |</span><br><span class="line">    xmlstarlet unesc | fmt -80</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Tidak-penting-tapi-bermanfaat"><a href="#Tidak-penting-tapi-bermanfaat" class="headerlink" title="Tidak penting tapi bermanfaat"></a>Tidak penting tapi bermanfaat</h2><ul>
+<li><p><code>expr</code> : melakukan perhitungan aritmatika atau mengevaluasi regular expression (regex)</p>
+</li>
+<li><p><code>m4</code> : pemroses macro yang sederhana</p>
+</li>
+<li><p><code>yes</code> : menampilkan cukup banyak string</p>
+</li>
+<li><p><code>cal</code> : menampilkan kalender</p>
+</li>
+<li><p><code>env</code> : menjalankan sebuah perintah (berguna dalam skrip)</p>
+</li>
+<li><p><code>printenv</code> : menampilkan variabel environment (berguna dalam analisa dan skrip)</p>
+</li>
+<li><p><code>look</code> : mencari kata dalam bahasa English (atau baris dalam sebuah berkas) diawali dengan sebuah string</p>
+</li>
+<li><p><code>cut</code>, <code>paste</code> dan <code>join</code>: manipulasi data</p>
+</li>
+<li><p><code>fmt</code>: teks dengan format paragraf</p>
+</li>
+<li><p><code>pr</code>: teks dengan format halaman/kolom</p>
+</li>
+<li><p><code>fold</code>: membatasi baris dari teks</p>
+</li>
+<li><p><code>column</code>: membuat format teks jadi rata, lebar kolom tertentu atau bentuk tabel</p>
+</li>
+<li><p><code>expand</code> dan <code>unexpand</code>: konversi antara tab dan spasi</p>
+</li>
+<li><p><code>nl</code>: menambahkan baris baru</p>
+</li>
+<li><p><code>seq</code>: menampilkan angka</p>
+</li>
+<li><p><code>bc</code>: kalkulator</p>
+</li>
+<li><p><code>factor</code>: angka faktorial</p>
+</li>
+<li><p><a href="https://gnupg.org/" target="_blank" rel="noopener"><code>gpg</code></a>: mengenkripsi dan menandatangani berkas</p>
+</li>
+<li><p><code>toe</code>: isi dari tabel terminfo</p>
+</li>
+<li><p><code>nc</code>: analisa jaringan dan aktifitas datanya</p>
+</li>
+<li><p><code>socat</code>: jalur tunda dan penerus jalur tcp (mirip dengan <code>netcat</code>)</p>
+</li>
+<li><p><a href="https://github.com/mattthias/slurm" target="_blank" rel="noopener"><code>slurm</code></a>: visualisasi aktifitas jaringan</p>
+</li>
+<li><p><code>dd</code>: memindahkan data antar berkas atau perangkat</p>
+</li>
+<li><p><code>file</code>: identifikasi jenis dari berkas</p>
+</li>
+<li><p><code>tree</code>: menampilkan struktur pohon dari direktori dan subdirektori secara bersarang; mirip <code>ls</code> namun dapat rekursif</p>
+</li>
+<li><p><code>stat</code>: informasi berkas</p>
+</li>
+<li><p><code>time</code>: menjadwalkan dan menjalankan sebuah perintah</p>
+</li>
+<li><p><code>timeout</code>: menjalankan sebuah perintah dalam waktu yang telah ditentukan dan melanjutkan kembali dalam waktu yang telah ditentukan pula.</p>
+</li>
+<li><p><code>lockfile</code>: membuat berkas dengan tanda hanya dapat dihapus oleh <code>rm -f</code></p>
+</li>
+<li><p><code>logrotate</code>: menggulirkan, mengkompres serta mengirimkan via email berkas logs</p>
+</li>
+<li><p><code>watch</code>: menjalankan program secara berulang, menampilkan hasil dan/atau memfokuskan pada perubahan</p>
+</li>
+<li><p><code>tac</code>: menmapilkan kebalikan dari berkas</p>
+</li>
+<li><p><code>shuf</code>: memilih baris secara acak dari sebuah berkas</p>
+</li>
+<li><p><code>comm</code>: membandingkan berkas yang terurut berdasarkan baris</p>
+</li>
+<li><p><code>pv</code>: memantau perkembangan data yang melalui sebuah saluran</p>
+</li>
+<li><p><code>hd</code>, <code>hexdump</code>, <code>xxd</code>, <code>biew</code> dan <code>bvi</code>: menampilkan atau memperbaiki berkas dalam biner</p>
+</li>
+<li><p><code>strings</code>: mengeluarkan teks dari berkas biner</p>
+</li>
+<li><p><code>tr</code>: konversi atau menipulasi sebuah karakter</p>
+</li>
+<li><p><code>iconv</code> atau <code>uconv</code>: konversi kode teks</p>
+</li>
+<li><p><code>split</code> dan <code>csplit</code>: membagi berkas</p>
+</li>
+<li><p><code>sponge</code>: membaca semua masukan sebelum menuliskannya, berguna untuk membaca dan menulis pada berkas yang sama, misalnya <code>grep -v sesuatu nama-berkas | sponge nama-berkas</code></p>
+</li>
+<li><p><code>units</code>: konversi dan kalkulasi unit; mengkonversi jarak mil per dua minggu (lihat juga <code>/usr/share/units/definitions.units</code>)</p>
+</li>
+<li><p><code>apg</code>: membangkitkan kata kunci acak</p>
+</li>
+<li><p><code>xz</code>: kompresi berkas dengan rasio yang tinggi</p>
+</li>
+<li><p><code>ldd</code>: informasi dynamic library</p>
+</li>
+<li><p><code>nm</code>: simbil dari objek berkas</p>
+</li>
+<li><p><code>ab</code>: patokan untuk web server</p>
+</li>
+<li><p><code>strace</code>: analisa sistem pemanggilan</p>
+</li>
+<li><p><a href="http://www.bitwizard.nl/mtr/" target="_blank" rel="noopener"><code>mtr</code></a>: traceroute yang lebih baik untuk analisa jaringan</p>
+</li>
+<li><p><code>cssh</code>: visual shell dalam jumlah banyak secara bersamaan</p>
+</li>
+<li><p><code>rsync</code>: singkronisasi berkas dan direktori melalui SSH atau berkas sistem dalam satu mesin</p>
+</li>
+<li><p><a href="https://wireshark.org/" target="_blank" rel="noopener"><code>wireshark</code></a> dan <a href="https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html" target="_blank" rel="noopener"><code>tshark</code></a>: penangkap paket dan analisa jaringan</p>
+</li>
+<li><p><a href="http://ngrep.sourceforge.net/" target="_blank" rel="noopener"><code>ngrep</code></a>: grep untuk jaringan</p>
+</li>
+<li><p><code>host</code> dan <code>dig</code>: pencarian DNS</p>
+</li>
+<li><p><code>lsof</code>: deskripsi berkas process dan informasi socket</p>
+</li>
+<li><p><code>dstat</code>: berguna untuk statistik sistem</p>
+</li>
+<li><p><a href="https://github.com/nicolargo/glances" target="_blank" rel="noopener"><code>glances</code></a>: tingkat tinggi, informasi singkat banyak subsistem</p>
+</li>
+<li><p><code>iostat</code>: statistik penggunaan penyimpanan</p>
+</li>
+<li><p><code>mpstat</code>: statistik penggunaan CPU</p>
+</li>
+<li><p><code>vmstat</code>: statistik penggunaan memory</p>
+</li>
+<li><p><code>htop</code>: versi terbaru dari top</p>
+</li>
+<li><p><code>last</code>: riwayat login</p>
+</li>
+<li><p><code>w</code>: melihat siapa yang sedang login</p>
+</li>
+<li><p><code>id</code>: informasi identitas pengguna atau grup</p>
+</li>
+<li><p><a href="http://sebastien.godard.pagesperso-orange.fr/" target="_blank" rel="noopener"><code>sar</code></a>: riwayat statistik sistem</p>
+</li>
+<li><p><a href="http://www.ex-parrot.com/~pdw/iftop/" target="_blank" rel="noopener"><code>iftop</code></a> or <a href="https://github.com/raboof/nethogs" target="_blank" rel="noopener"><code>nethogs</code></a>: penggunaan jaringan berdasarkan socket atau process</p>
+</li>
+<li><p><code>ss</code>: statistik socket</p>
+</li>
+<li><p><code>dmesg</code>: pesan ketika boot dan sistem error</p>
+</li>
+<li><p><code>sysctl</code>: melihat dan mengkonfigurasi parameter kernel Linux saat sedang berjalan</p>
+</li>
+<li><p><code>hdparm</code>: manipulasi atau melihat kinerja media SATA/ATA</p>
+</li>
+<li><p><code>lsblk</code>: daftar blok perangkat: berbentuk struktur pohon yang berisi media penyimpanan beserta partisinya</p>
+</li>
+<li><p><code>lshw</code>, <code>lscpu</code>, <code>lspci</code>, <code>lsusb</code>, <code>dmidecode</code>: informasi perangkat keras, termasuk CPU, BIOS, RAID, grafis, dan lain sebagainya.</p>
+</li>
+<li><p><code>lsmod</code> and <code>modinfo</code>: menampilkan daftar dan detil modul kernel</p>
+</li>
+<li><p><code>fortune</code>, <code>ddate</code>, dan <code>sl</code>: tergantung bagaimana anda menyebutnya “bermanfaat”</p>
+</li>
+</ul>
+<h2 id="Khusus-OS-X"><a href="#Khusus-OS-X" class="headerlink" title="Khusus OS X"></a>Khusus OS X</h2><p>Berikut ini <em>hanya</em> berlaku pada OS X.</p>
+<ul>
+<li><p>Manajemen paket menggunakan <code>brew</code> (homebrew) dan/atau <code>port</code> (MacPorts). Dapat digunakan untuk memasang banyak aplikasi OS X untuk menggunakan perintah-perintah diatas.</p>
+</li>
+<li><p>Salin keluaran dari perintah ke aplikasi desktop menggunakan <code>pbcopy</code> dan tempel menggunakan <code>pbpaste</code>.</p>
+</li>
+<li><p>Untuk mengaktifkan tombol Option pada aplikasi Terminal OS X sebagai tombol alt (seperti menggunakan perintah diatas <strong>alt-b</strong>, <strong>alt-f</strong>, dan lain sebagainya), buka Preferences -&gt; Profiles -&gt; Keyboard dan pilih “Use Option as Meta key”.</p>
+</li>
+<li><p>Untuk membuka berkas pada aplikasi desktop, gunakan <code>open</code> atau <code>open -a /Applications/namaaplikasi.app</code>.</p>
+</li>
+<li><p>Spotlight: Mencari berkas dengan <code>mdfind</code> dan menampilkan metadata (seperti info EXIF foto) dengan <code>mdls</code>.</p>
+</li>
+<li><p>Berhati-hati karena OS X berbasis pada BSD Unix, dan banyak perintah (seperti <code>ps</code>, <code>ls</code>, <code>tail</code>, <code>awk</code>, <code>sed</code>) beberapa memiliki varian yang berbeda dengan Linux, yang mana akan berdampak besar pada System V-style Unix dan peralatan GNU lainnya. Perbedaannya dapat diketahui dengan mencari pada halaman manual “BSD General Command Manual”. Pada beberapa kasus versi GNU dapat dipasang juga (seperti <code>gawk</code> dan <code>gsed</code> untuk GNU awk dan sed). Ketika menulis skrip Bash lintas platform, hundari beberapa perintah (seperti mempertimbangkan Python atau <code>perl</code>) atau coba kembali dengan hati-hati.</p>
+</li>
+<li><p>Untuk mendapatkan informasi rilis OS X, gunakan <code>sw_vers</code>.</p>
+</li>
+</ul>
+<h2 id="Hanya-Windows"><a href="#Hanya-Windows" class="headerlink" title="Hanya Windows"></a>Hanya Windows</h2><p>Berikut ini <em>hanya</em> berlaku pada Windows.</p>
+<ul>
+<li><p>Pada Windows 10, anda dapat menggunakan <a href="https://msdn.microsoft.com/commandline/wsl/about" target="_blank" rel="noopener">Bash di Ubuntu pada Windows</a>, dimana menyediakan lingkungan Bash yang mirip dengan perintah baris pada lingkungan Unix. Sebagai tambahan, memungkinkan program Linux untuk berjalan pada Windows. Namun disisi lain tidak memungkinkan untuk menjalankan aplikasi windows melalui jendela Bash.</p>
+</li>
+<li><p>Akses fasilitas dari Shell Unix pada Microsoft Windows dengan memasang <a href="https://cygwin.com/" target="_blank" rel="noopener">Cygwin</a>. Banyak hal telah dijelaskan pada dokumen ini akan bekerja secara normal.</p>
+</li>
+<li><p>Pasang program Unix tambahan dengan paket manajer Cygwin.</p>
+</li>
+<li><p>Gunakan <code>mintty</code> sebagai aplikasi perintah baris.</p>
+</li>
+<li><p>Akses clipboard pada Windows pada <code>/dev/clipboard</code>.</p>
+</li>
+<li><p>Gunakan <code>cygstart</code> untuk membuka berkas melalui aplikasi yang telah terdaftar.</p>
+</li>
+<li><p>Akses registry pada Windows dengan <code>regtool</code>.</p>
+</li>
+<li><p>Ingat bahwa <code>C:\</code> Windows akan menjadi <code>/cygdrive/c</code> pada Cygwin, dan <code>/</code> pada Cygwin akan berada di <code>C:\cygwin</code> pada Windows. Konversi antara Cygwin dan gaya Windows file path dengan <code>cygpath</code>. Hal ini berguna dalam skrip yang menjalankan program Windows.</p>
+</li>
+<li><p>Anda dapat menjalankan skrip sistem administrasi pada Windows dari perintah baris dengan mempelajari dan menggunakan <code>wmic</code>.</p>
+</li>
+<li><p>Pilihan lainnya untuk membuat mendapatkan Unix pada Windows adalah <a href="https://github.com/dthree/cash" target="_blank" rel="noopener">Cash</a>. Sebagai catatan bahwa hanya tersedia beberapa fasilitas perintah baris Unix yang tersedia dalam lingkungan ini.</p>
+</li>
+<li><p>Sebagai pilihan alternatif untuk mendapatkan alat pengembangan dalam GNU (seperti GCC) pada Windows adalah <a href="http://www.mingw.org/" target="_blank" rel="noopener">MinGW</a> dan paketnya <a href="http://www.mingw.org/wiki/msys" target="_blank" rel="noopener">MSYS</a>, dimana menyediakan beberapa fasilitas seperti bash, gawk, make dan grep. MSYS tidak sepenuhnya memiliki semua fasilitas jika dibandingkan dengan Cygwin. Cygwin biasanya berguna untuk membuat port Windows dari Unix.</p>
+</li>
+</ul>
+<h2 id="Bacaan-lebih-lanjut"><a href="#Bacaan-lebih-lanjut" class="headerlink" title="Bacaan lebih lanjut"></a>Bacaan lebih lanjut</h2><ul>
+<li><a href="https://github.com/alebcay/awesome-shell" target="_blank" rel="noopener">awesome-shell</a>: Daftar alat dan sumber Shell lainnya.</li>
+<li><a href="https://github.com/herrbischoff/awesome-osx-command-line" target="_blank" rel="noopener">awesome-osx-command-line</a>: Penjelasan lebih dalam perintah baris pada OS X.</li>
+<li><a href="http://redsymbol.net/articles/unofficial-bash-strict-mode/" target="_blank" rel="noopener">Strict mode</a> untuk  menulis skrip Shell yang lebih baik.</li>
+<li><a href="https://github.com/koalaman/shellcheck" target="_blank" rel="noopener">shellcheck</a>: Analisis Shell skrip. Pada dasarnya, lint untuk bash/sh/zsh.</li>
+<li><a href="http://www.dwheeler.com/essays/filenames-in-shell.html" target="_blank" rel="noopener">Filenames and Pathnames in Shell</a>: Cara menangani nama berkas yang baik dan benar pada skrip Shell.</li>
+<li><a href="http://datascienceatthecommandline.com/#tools" target="_blank" rel="noopener">Data Science at the Command Line</a>: Perintah dan alat yang berguna untuk mengolah data sains, dari buku dengan nama yang sama.</li>
+</ul>
+<h2 id="Penyangkalan"><a href="#Penyangkalan" class="headerlink" title="Penyangkalan"></a>Penyangkalan</h2><p>Dengan pengecualian dari tugas yang sangat kecil, kode ditulis sehingga orang lain dapat membacanya. Dengan kekuatan datang tanggung jawab. Bahkan Anda <em> dapat </em> melakukan sesuatu di Bash tidak berarti Anda harus! ;)<br>Dengan beberapa pengecualian, sebuah kode ditulis sehingga orang lain dapat membacanya. Dengan adanya kekuatan datang pula tanggung jawab. Faktanya anda <em>dapat</em> melakukan hal yang tidak seharusnya dalam Bash! ;)</p>
+<h2 id="Lisensi"><a href="#Lisensi" class="headerlink" title="Lisensi"></a>Lisensi</h2><p><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License"></a></p>
+<p>Hasil kerja ini memiliki lisensi dibatah <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/命令行的艺术/README-fr/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/命令行的艺术/README-it/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="youknow2019">
+          <p class="site-author-name" itemprop="name">youknow2019</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Seni-dalam-Baris-Perintah"><span class="nav-number">1.</span> <span class="nav-text">Seni dalam Baris Perintah</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Meta"><span class="nav-number">1.1.</span> <span class="nav-text">Meta</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dasar-dasar"><span class="nav-number">1.2.</span> <span class="nav-text">Dasar-dasar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Penggunaan-sehari-hari"><span class="nav-number">1.3.</span> <span class="nav-text">Penggunaan sehari-hari</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mengolah-berkas-dan-data"><span class="nav-number">1.4.</span> <span class="nav-text">Mengolah berkas dan data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analisa-sistem"><span class="nav-number">1.5.</span> <span class="nav-text">Analisa sistem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perintah-satu-baris"><span class="nav-number">1.6.</span> <span class="nav-text">Perintah satu baris</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tidak-penting-tapi-bermanfaat"><span class="nav-number">1.7.</span> <span class="nav-text">Tidak penting tapi bermanfaat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Khusus-OS-X"><span class="nav-number">1.8.</span> <span class="nav-text">Khusus OS X</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hanya-Windows"><span class="nav-number">1.9.</span> <span class="nav-text">Hanya Windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bacaan-lebih-lanjut"><span class="nav-number">1.10.</span> <span class="nav-text">Bacaan lebih lanjut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Penyangkalan"><span class="nav-number">1.11.</span> <span class="nav-text">Penyangkalan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lisensi"><span class="nav-number">1.12.</span> <span class="nav-text">Lisensi</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">youknow2019</span>
+</div>
+
+
+<div class="theme-info">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/命令行的艺术/README-id/';
+          this.page.identifier = '命令行的艺术/README-id/';
+          this.page.title = '';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
